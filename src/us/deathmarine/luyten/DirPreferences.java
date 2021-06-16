@@ -5,11 +5,11 @@ import java.io.File;
 
 class DirPreferences {
     private LuytenPreferences luytenPrefs;
-
+    
     public DirPreferences(LuytenPreferences luytenPrefs) {
         this.luytenPrefs = luytenPrefs;
     }
-
+    
     void retrieveOpenDialogDir(JFileChooser fc) {
         try {
             String currentDirStr = luytenPrefs.getFileOpenCurrentDirectory();
@@ -23,7 +23,7 @@ class DirPreferences {
             Luyten.showExceptionDialog("Exception!", e);
         }
     }
-
+    
     void saveOpenDialogDir(JFileChooser fc) {
         try {
             File currentDir = fc.getCurrentDirectory();
@@ -34,7 +34,7 @@ class DirPreferences {
             Luyten.showExceptionDialog("Exception!", e);
         }
     }
-
+    
     void retrieveSaveDialogDir(JFileChooser fc) {
         try {
             String currentDirStr = luytenPrefs.getFileSaveCurrentDirectory();
@@ -48,7 +48,7 @@ class DirPreferences {
             Luyten.showExceptionDialog("Exception!", e);
         }
     }
-
+    
     void saveSaveDialogDir(JFileChooser fc) {
         try {
             File currentDir = fc.getCurrentDirectory();
