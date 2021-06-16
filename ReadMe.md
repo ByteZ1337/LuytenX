@@ -19,7 +19,7 @@ We use maven to handle our dependencies.
 
 ## Screenshot
 
-![Screen](https://i.imgur.com/phc59W6.png)
+![Screen](https://i.imgur.com/oD2pMwB.png)
 
 ### Downloads
 
