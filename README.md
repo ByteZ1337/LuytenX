@@ -1,15 +1,19 @@
 LuytenX
 ======
 
-This is a fork of [Luyten](https://github.com/deathmarine/Luyten). This fork includes a default dark mode (Atom One Dark), and a ton of code improvements.
+This is a fork of [Luyten](https://github.com/deathmarine/Luyten) including a default dark mode (Atom One Dark), and a ton of code improvements.
+
+Planned features are:
+
+* More decompilers
+* More themes
+* Krakatau disassembler
 
 **Still not one of the best**
 
 Decompiler Gui for Procyon
 
 Licensed under Apache Version 2.0
-
-[![Releases](https://img.shields.io/github/downloads/deathmarine/luyten/total.svg)](https://github.com/deathmarine/Luyten/releases)
 
 ## Compilation
 
@@ -42,4 +46,4 @@ Licensed under Apache Version 2.0
 
 &copy; 2021 Jannis Weis  
 [https://github.com/weisJ/darklaf/](https://github.com/weisJ/darklaf/)
-[All rights Reserved](https://github.com/weisJ/darklaf/blob/master/LICENSE)
+[MIT License](https://github.com/weisJ/darklaf/blob/master/LICENSE)
