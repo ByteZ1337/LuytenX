@@ -450,7 +450,7 @@ public class MainMenuBar extends JMenuBar {
         menuItem.addActionListener(event -> {
             JPanel pane = new JPanel();
             pane.setLayout(new BoxLayout(pane, BoxLayout.PAGE_AXIS));
-            JLabel title = new JLabel("Luyten " + Luyten.getVersion());
+            JLabel title = new JLabel("LuytenX " + Luyten.getVersion());
             title.setFont(new Font(Font.SANS_SERIF, Font.PLAIN, 18));
             pane.add(title);
             pane.add(new JLabel("by Deathmarine patched by ByteZ"));

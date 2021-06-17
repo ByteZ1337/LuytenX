@@ -29,7 +29,7 @@ import java.util.Vector;
 public class MainWindow extends JFrame {
     private static final long serialVersionUID = 5265556630724988013L;
     
-    private static final String TITLE = "Luyten | Patched by ByteZ ";
+    private static final String TITLE = "LuytenX";
     private static final String DEFAULT_TAB = "#DEFAULT";
     
     private JProgressBar bar;

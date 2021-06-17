@@ -113,7 +113,7 @@ public class Luyten {
     }
     
     public static String getVersion() {
-        return "0.7-Patched";
+        return "0.8";
     }
     
     /**
