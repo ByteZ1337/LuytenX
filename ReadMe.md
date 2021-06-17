@@ -1,10 +1,13 @@
-This is a fork of the main Luyten repo. This fork includes a default dark mode (Atom One Dark), and a ton of code
-improvements.
-
-Luyten
+LuytenX
 ======
-Java Decompiler Gui for Procyon  
-Apache License, Version 2.0
+
+This is a fork of [Luyten](https://github.com/deathmarine/Luyten). This fork includes a default dark mode (Atom One Dark), and a ton of code improvements.
+
+**Still not one of the best**
+
+Decompiler Gui for Procyon
+
+Licensed under Apache Version 2.0
 
 [![Releases](https://img.shields.io/github/downloads/deathmarine/luyten/total.svg)](https://github.com/deathmarine/Luyten/releases)
 
@@ -12,22 +15,12 @@ Apache License, Version 2.0
 
 *****
 
-We use maven to handle our dependencies.
-
 * Install [Maven 3](https://maven.apache.org/download.html)
 * Clone this repo and: `mvn clean install`
 
 ## Screenshot
 
 ![Screen](https://i.imgur.com/oD2pMwB.png)
-
-### Downloads
-
-[Releases](https://github.com/deathmarine/Luyten/releases/latest)
-
-### Bugs/Suggestions
-
-[Issues](https://github.com/deathmarine/Luyten/issues)
 
 ## Powered by
 
@@ -47,6 +40,6 @@ We use maven to handle our dependencies.
 
 ### DarkLaf
 
-&copy; 2012 Jannis Weis  
+&copy; 2021 Jannis Weis  
 [https://github.com/weisJ/darklaf/](https://github.com/weisJ/darklaf/)
 [All rights Reserved](https://github.com/weisJ/darklaf/blob/master/LICENSE)
