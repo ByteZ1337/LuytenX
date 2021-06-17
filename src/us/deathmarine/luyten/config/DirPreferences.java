@@ -1,16 +1,19 @@
-package us.deathmarine.luyten;
+package us.deathmarine.luyten.config;
+
+import us.deathmarine.luyten.Luyten;
+import us.deathmarine.luyten.config.LuytenPreferences;
 
 import javax.swing.*;
 import java.io.File;
 
-class DirPreferences {
+public class DirPreferences {
     private LuytenPreferences luytenPrefs;
     
     public DirPreferences(LuytenPreferences luytenPrefs) {
         this.luytenPrefs = luytenPrefs;
     }
     
-    void retrieveOpenDialogDir(JFileChooser fc) {
+    public void retrieveOpenDialogDir(JFileChooser fc) {
         try {
             String currentDirStr = luytenPrefs.getFileOpenCurrentDirectory();
             if (currentDirStr != null && currentDirStr.trim().length() > 0) {
@@ -24,7 +27,7 @@ class DirPreferences {
         }
     }
     
-    void saveOpenDialogDir(JFileChooser fc) {
+    public void saveOpenDialogDir(JFileChooser fc) {
         try {
             File currentDir = fc.getCurrentDirectory();
             if (currentDir != null && currentDir.exists() && currentDir.isDirectory()) {
@@ -35,7 +38,7 @@ class DirPreferences {
         }
     }
     
-    void retrieveSaveDialogDir(JFileChooser fc) {
+    public void retrieveSaveDialogDir(JFileChooser fc) {
         try {
             String currentDirStr = luytenPrefs.getFileSaveCurrentDirectory();
             if (currentDirStr != null && currentDirStr.trim().length() > 0) {
@@ -49,7 +52,7 @@ class DirPreferences {
         }
     }
     
-    void saveSaveDialogDir(JFileChooser fc) {
+    public void saveSaveDialogDir(JFileChooser fc) {
         try {
             File currentDir = fc.getCurrentDirectory();
             if (currentDir != null && currentDir.exists() && currentDir.isDirectory()) {

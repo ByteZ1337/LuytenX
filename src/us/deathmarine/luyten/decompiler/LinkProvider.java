@@ -1,4 +1,4 @@
-package us.deathmarine.luyten;
+package us.deathmarine.luyten.decompiler;
 
 import java.util.Map;
 import java.util.Set;

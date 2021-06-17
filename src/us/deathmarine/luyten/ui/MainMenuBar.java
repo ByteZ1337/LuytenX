@@ -1,9 +1,13 @@
-package us.deathmarine.luyten;
+package us.deathmarine.luyten.ui;
 
 import com.strobel.Procyon;
 import com.strobel.decompiler.DecompilerSettings;
 import com.strobel.decompiler.languages.Language;
 import com.strobel.decompiler.languages.Languages;
+import us.deathmarine.luyten.Luyten;
+import us.deathmarine.luyten.RecentFiles;
+import us.deathmarine.luyten.config.ConfigSaver;
+import us.deathmarine.luyten.config.LuytenPreferences;
 
 import javax.swing.*;
 import javax.swing.text.DefaultEditorKit;

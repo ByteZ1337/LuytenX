@@ -10,6 +10,16 @@ import com.strobel.decompiler.DecompilerSettings;
 import com.strobel.decompiler.PlainTextOutput;
 import org.fife.ui.rsyntaxtextarea.RSyntaxTextArea;
 import org.fife.ui.rsyntaxtextarea.Theme;
+import us.deathmarine.luyten.config.ConfigSaver;
+import us.deathmarine.luyten.config.LuytenPreferences;
+import us.deathmarine.luyten.exception.FileEntryNotFoundException;
+import us.deathmarine.luyten.exception.FileIsBinaryException;
+import us.deathmarine.luyten.exception.TooLargeFileException;
+import us.deathmarine.luyten.ui.CellRenderer;
+import us.deathmarine.luyten.ui.FindBox;
+import us.deathmarine.luyten.ui.MainWindow;
+import us.deathmarine.luyten.ui.TreeNodeUserObject;
+import us.deathmarine.luyten.util.*;
 
 import javax.swing.*;
 import javax.swing.event.ChangeEvent;
@@ -345,7 +355,7 @@ public class Model extends JSplitPane {
         }
     }
     
-    void extractClassToTextPane(TypeReference type, String tabTitle, String path, String navigatonLink)
+    public void extractClassToTextPane(TypeReference type, String tabTitle, String path, String navigatonLink)
             throws Exception {
         if (tabTitle == null || tabTitle.trim().length() < 1 || path == null) {
             throw new FileEntryNotFoundException();

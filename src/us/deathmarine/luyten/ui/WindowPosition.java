@@ -1,4 +1,4 @@
-package us.deathmarine.luyten;
+package us.deathmarine.luyten.ui;
 
 import javax.swing.*;
 import java.awt.*;

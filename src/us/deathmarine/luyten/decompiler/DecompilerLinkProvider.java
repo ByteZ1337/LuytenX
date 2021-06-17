@@ -1,10 +1,11 @@
-package us.deathmarine.luyten;
+package us.deathmarine.luyten.decompiler;
 
 import com.strobel.assembler.metadata.*;
 import com.strobel.core.StringUtilities;
 import com.strobel.decompiler.DecompilationOptions;
 import com.strobel.decompiler.DecompilerSettings;
 import com.strobel.decompiler.PlainTextOutput;
+import us.deathmarine.luyten.Luyten;
 
 import java.io.StringWriter;
 import java.util.*;

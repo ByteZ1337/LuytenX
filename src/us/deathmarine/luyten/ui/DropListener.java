@@ -1,4 +1,6 @@
-package us.deathmarine.luyten;
+package us.deathmarine.luyten.ui;
+
+import us.deathmarine.luyten.Luyten;
 
 import java.awt.datatransfer.DataFlavor;
 import java.awt.datatransfer.Transferable;

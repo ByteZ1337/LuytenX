@@ -1,4 +1,9 @@
-package us.deathmarine.luyten;
+package us.deathmarine.luyten.ui;
+
+import us.deathmarine.luyten.Luyten;
+import us.deathmarine.luyten.config.ConfigSaver;
+import us.deathmarine.luyten.config.DirPreferences;
+import us.deathmarine.luyten.config.LuytenPreferences;
 
 import javax.swing.*;
 import javax.swing.filechooser.FileFilter;

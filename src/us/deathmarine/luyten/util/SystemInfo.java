@@ -1,4 +1,4 @@
-package us.deathmarine.luyten;
+package us.deathmarine.luyten.util;
 
 import java.util.Locale;
 

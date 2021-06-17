@@ -1,9 +1,11 @@
-package us.deathmarine.luyten;
+package us.deathmarine.luyten.config;
 
 import com.strobel.decompiler.DecompilerSettings;
 import com.strobel.decompiler.languages.Language;
 import com.strobel.decompiler.languages.Languages;
 import com.strobel.decompiler.languages.java.JavaFormattingOptions;
+import us.deathmarine.luyten.Luyten;
+import us.deathmarine.luyten.ui.WindowPosition;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;

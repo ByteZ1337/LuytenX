@@ -1,4 +1,4 @@
-package us.deathmarine.luyten;
+package us.deathmarine.luyten.ui;
 
 public class TreeNodeUserObject {
     

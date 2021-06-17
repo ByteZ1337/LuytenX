@@ -1,4 +1,4 @@
-package us.deathmarine.luyten;
+package us.deathmarine.luyten.util;
 
 public final class Closer {
     public static void tryClose(final AutoCloseable c) {

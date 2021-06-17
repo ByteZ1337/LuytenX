@@ -1,4 +1,4 @@
-package us.deathmarine.luyten;
+package us.deathmarine.luyten.decompiler;
 
 import com.strobel.assembler.metadata.*;
 import com.strobel.core.StringUtilities;
@@ -6,6 +6,11 @@ import com.strobel.decompiler.DecompilationOptions;
 import com.strobel.decompiler.DecompilerSettings;
 import com.strobel.decompiler.PlainTextOutput;
 import com.strobel.decompiler.languages.java.JavaFormattingOptions;
+import us.deathmarine.luyten.util.JarEntryFilter;
+import us.deathmarine.luyten.Luyten;
+import us.deathmarine.luyten.config.ConfigSaver;
+import us.deathmarine.luyten.config.LuytenPreferences;
+import us.deathmarine.luyten.util.LuytenTypeLoader;
 
 import javax.swing.*;
 import java.awt.event.MouseAdapter;

@@ -1,4 +1,6 @@
-package us.deathmarine.luyten;
+package us.deathmarine.luyten.ui;
+
+import us.deathmarine.luyten.OpenFile;
 
 import javax.swing.*;
 import javax.swing.tree.DefaultMutableTreeNode;

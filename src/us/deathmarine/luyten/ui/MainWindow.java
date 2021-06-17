@@ -1,6 +1,12 @@
-package us.deathmarine.luyten;
+package us.deathmarine.luyten.ui;
 
 import org.fife.ui.rsyntaxtextarea.RSyntaxTextArea;
+import us.deathmarine.luyten.Luyten;
+import us.deathmarine.luyten.Model;
+import us.deathmarine.luyten.RecentFiles;
+import us.deathmarine.luyten.config.ConfigSaver;
+import us.deathmarine.luyten.config.LuytenPreferences;
+import us.deathmarine.luyten.decompiler.FileSaver;
 
 import javax.swing.*;
 import javax.swing.border.BevelBorder;
@@ -28,12 +34,12 @@ public class MainWindow extends JFrame {
     
     private JProgressBar bar;
     private JLabel label;
-    FindBox findBox;
+    public FindBox findBox;
     private FindAllBox findAllBox;
     private ConfigSaver configSaver;
     private WindowPosition windowPosition;
     private LuytenPreferences luytenPrefs;
-    private FileDialog fileDialog;
+    private us.deathmarine.luyten.ui.FileDialog fileDialog;
     private FileSaver fileSaver;
     private JTabbedPane jarsTabbedPane;
     private Map<String, Model> jarModels;

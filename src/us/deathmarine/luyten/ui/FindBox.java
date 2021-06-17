@@ -1,8 +1,9 @@
-package us.deathmarine.luyten;
+package us.deathmarine.luyten.ui;
 
 import org.fife.ui.rsyntaxtextarea.RSyntaxTextArea;
 import org.fife.ui.rtextarea.SearchContext;
 import org.fife.ui.rtextarea.SearchEngine;
+import us.deathmarine.luyten.config.ConfigSaver;
 
 import javax.swing.*;
 import javax.swing.GroupLayout.Alignment;

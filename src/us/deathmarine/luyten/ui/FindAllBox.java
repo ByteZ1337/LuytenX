@@ -1,4 +1,4 @@
-package us.deathmarine.luyten;
+package us.deathmarine.luyten.ui;
 
 import com.strobel.assembler.metadata.TypeDefinition;
 import com.strobel.assembler.metadata.TypeReference;
@@ -6,6 +6,9 @@ import com.strobel.core.StringUtilities;
 import com.strobel.decompiler.DecompilationOptions;
 import com.strobel.decompiler.DecompilerSettings;
 import com.strobel.decompiler.PlainTextOutput;
+import us.deathmarine.luyten.Luyten;
+import us.deathmarine.luyten.Model;
+import us.deathmarine.luyten.config.ConfigSaver;
 
 import javax.swing.*;
 import javax.swing.GroupLayout.Alignment;

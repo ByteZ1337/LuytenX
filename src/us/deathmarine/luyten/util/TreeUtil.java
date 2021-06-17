@@ -1,4 +1,6 @@
-package us.deathmarine.luyten;
+package us.deathmarine.luyten.util;
+
+import us.deathmarine.luyten.ui.TreeNodeUserObject;
 
 import javax.swing.*;
 import javax.swing.tree.DefaultMutableTreeNode;

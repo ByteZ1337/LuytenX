@@ -1,4 +1,4 @@
-package us.deathmarine.luyten;
+package us.deathmarine.luyten.decompiler;
 
 public class Selection implements Comparable<Selection> {
     public final Integer from;

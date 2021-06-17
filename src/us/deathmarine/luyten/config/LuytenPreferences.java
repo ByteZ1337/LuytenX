@@ -1,4 +1,4 @@
-package us.deathmarine.luyten;
+package us.deathmarine.luyten.config;
 
 /**
  * Do not instantiate this class, get the instance from ConfigSaver. All
