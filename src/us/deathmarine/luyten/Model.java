@@ -551,6 +551,7 @@ public class Model extends JSplitPane {
             super(new GridBagLayout());
             this.setOpaque(false);
             this.tabTitle = new JLabel(title);
+            this.tabTitle.putClientProperty("html.disable", true);
             this.createTab();
             closeButton.addMouseListener(new MouseAdapter() {
                 @Override

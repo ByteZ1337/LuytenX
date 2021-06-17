@@ -45,7 +45,7 @@ public class CellRenderer extends DefaultTreeCellRenderer {
         } else {
             setIcon(this.file_image);
         }
-        
+        putClientProperty("html.disable", true);
         return this;
     }
     
