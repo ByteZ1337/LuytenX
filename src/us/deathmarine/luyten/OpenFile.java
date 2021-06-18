@@ -36,8 +36,10 @@ public class OpenFile implements SyntaxConstants {
     
     public static final HashSet<String> WELL_KNOWN_TEXT_FILE_EXTENSIONS = new HashSet<>(
             Arrays.asList(".java", ".xml", ".rss", ".project", ".classpath", ".h", ".c", ".cpp", ".yaml", ".yml", ".ini", ".sql", ".js", ".php", ".php5",
-                    ".phtml", ".html", ".htm", ".xhtm", ".xhtml", ".lua", ".bat", ".pl", ".sh", ".css", ".json", ".txt",
-                    ".rb", ".make", ".mak", ".py", ".properties", ".prop"));
+                    ".phtml", ".xhtm", ".xhtml", ".lua", ".bat", ".pl", ".sh", ".json", ".txt",
+                    ".rb", ".make", ".mak", ".py", ".properties", ".prop", ".MF"));
+    public static final HashSet<String> WELL_KNOWN_IMAGE_FILE_EXTENSIONS = new HashSet<>(
+            Arrays.asList(".png", ".jpg", ".jpeg", ".gif", ".svg"));
     
     // navigation links
     private TreeMap<Selection, String> selectionToUniqueStrTreeMap = new TreeMap<>();
