@@ -436,7 +436,7 @@ public class Model extends JSplitPane {
         }
         
         // guess binary or text
-        String extension = "." + tabTitle.replaceAll("^[^.]*$", "").replaceAll("[^.]*\\.", "");
+        String extension = "." + tabTitle.replaceAll("^[^\\.]*$", "").replaceAll("[^\\.]*\\.", "");
         boolean isTextFile = (OpenFile.WELL_KNOWN_TEXT_FILE_EXTENSIONS.contains(extension)
                 || nonprintableCharactersCount < sb.length() / 5);
         if (!isTextFile) {
@@ -757,7 +757,7 @@ public class Model extends JSplitPane {
         HashSet<String> classContainingPackageRoots = new HashSet<>();
         
         // (assertion: mass does not contain null elements)
-        Comparator<String> sortByFileExtensionsComparator = Comparator.comparing((String o) -> o.replaceAll("[^.]*\\.", "")).thenComparing(o -> o);
+        Comparator<String> sortByFileExtensionsComparator = Comparator.comparing((String o) -> o.replaceAll("[^\\.]*\\.", "")).thenComparing(o -> o);
         
         for (String entry : mass) {
             String packagePath = "";

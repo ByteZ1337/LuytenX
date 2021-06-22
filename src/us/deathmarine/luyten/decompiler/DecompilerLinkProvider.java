@@ -40,7 +40,7 @@ public class DecompilerLinkProvider implements LinkProvider {
                         if (uniqueStr != null) {
                             // fix link's underline length: _java.util.HashSet_
                             // -> _HashSet_
-                            text = text.replaceAll("[^.]*\\.", "");
+                            text = text.replaceAll("[^\\.]*\\.", "");
                             int from = stringwriter.getBuffer().length() - text.length();
                             int to = stringwriter.getBuffer().length();
                             definitionToSelectionMap.put(uniqueStr, new Selection(from, to));
@@ -58,7 +58,7 @@ public class DecompilerLinkProvider implements LinkProvider {
                     if (text != null && reference != null) {
                         String uniqueStr = createUniqueStrForReference(reference);
                         if (uniqueStr != null) {
-                            text = text.replaceAll("[^.]*\\.", "");
+                            text = text.replaceAll("[^\\.]*\\.", "");
                             int from = stringwriter.getBuffer().length() - text.length();
                             int to = stringwriter.getBuffer().length();
                             if (reference instanceof FieldReference) {
@@ -354,7 +354,7 @@ public class DecompilerLinkProvider implements LinkProvider {
     }
     
     private String erasePackageInfoFromDesc(String desc) {
-        String limiters = "\\(\\)<>\\[]\\?\\s,";
+        String limiters = "\\(\\)\\<\\>\\[\\]\\?\\s,";
         desc = desc.replaceAll("(?<=[^" + limiters + "]*)([^" + limiters + "]*)\\.", "");
         return desc;
     }
