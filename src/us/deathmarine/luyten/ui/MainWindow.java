@@ -60,7 +60,7 @@ public class MainWindow extends JFrame {
         this.setQuitOnWindowClosing();
         this.setTitle(TITLE);
         this.setIconImage(new ImageIcon(
-                Toolkit.getDefaultToolkit().getImage(this.getClass().getResource("/resources/Luyten.png"))).getImage());
+                Toolkit.getDefaultToolkit().getImage(this.getClass().getResource("/resources/LuytenX.png"))).getImage());
         
         JPanel panel1 = new JPanel(new FlowLayout(FlowLayout.LEFT));
         label = new JLabel();

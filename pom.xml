@@ -178,7 +178,7 @@
                             <classPath>
                                 <mainClass>${project.groupId}.${project.artifactId}.Luyten</mainClass>
                             </classPath>
-                            <icon>luyten.ico</icon>
+                            <icon>luytenx.ico</icon>
                             <jre>
                                 <minVersion>1.11.0</minVersion>
                                 <maxVersion>1.16.0</maxVersion>
