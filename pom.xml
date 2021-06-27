@@ -162,7 +162,7 @@
             <plugin>
                 <groupId>com.akathist.maven.plugins.launch4j</groupId>
                 <artifactId>launch4j-maven-plugin</artifactId>
-                <version>1.7.4</version>
+                <version>2.1.1</version>
                 <executions>
                     <execution>
                         <id>l4j-gui</id>
@@ -180,8 +180,8 @@
                             </classPath>
                             <icon>luyten.ico</icon>
                             <jre>
-                                <minVersion>1.7.0</minVersion>
-                                <maxVersion>1.8.0</maxVersion>
+                                <minVersion>1.11.0</minVersion>
+                                <maxVersion>1.16.0</maxVersion>
                                 <initialHeapSize>128</initialHeapSize>
                                 <maxHeapSize>1024</maxHeapSize>
                             </jre>
@@ -247,7 +247,7 @@
                                             mainclass="${project.groupId}.${project.artifactId}.LuytenOsx"
                                             version="${project.version}" copyright="2015"
                                             icon="${project.build.sourceDirectory}/resources/luyten.icns"
-                                            jvmversion="1.7+" screenmenu="true"
+                                            jvmversion="1.11+" screenmenu="true"
                                             antialiasedgraphics="true" highresolutioncapable="true">
                                     <documenttype name="Class File" extensions="class" role="Viewer"/>
                                     <documenttype name="Java File" extensions="java" role="Viewer"/>
