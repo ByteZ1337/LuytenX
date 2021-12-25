@@ -70,25 +70,25 @@ public class ConfigSaver {
         try {
             Preferences prefs = Preferences.userNodeForPackage(ConfigSaver.class);
             if (!prefs.get(LANGUAGE_NAME_ID, decompilerSettings.getLanguage().getName())
-                    .equals(decompilerSettings.getLanguage().getName()))
+                .equals(decompilerSettings.getLanguage().getName()))
                 prefs.put(LANGUAGE_NAME_ID, decompilerSettings.getLanguage().getName());
             
             decompilerSettings.setFlattenSwitchBlocks(
-                    prefs.getBoolean(FLATTEN_SWITCH_BLOCKS_ID, decompilerSettings.getFlattenSwitchBlocks()));
+                prefs.getBoolean(FLATTEN_SWITCH_BLOCKS_ID, decompilerSettings.getFlattenSwitchBlocks()));
             decompilerSettings.setForceExplicitImports(
-                    prefs.getBoolean(FORCE_EXPLICIT_IMPORTS_ID, decompilerSettings.getForceExplicitImports()));
+                prefs.getBoolean(FORCE_EXPLICIT_IMPORTS_ID, decompilerSettings.getForceExplicitImports()));
             decompilerSettings.setShowSyntheticMembers(
-                    prefs.getBoolean(SHOW_SYNTHETIC_MEMBERS_ID, decompilerSettings.getShowSyntheticMembers()));
+                prefs.getBoolean(SHOW_SYNTHETIC_MEMBERS_ID, decompilerSettings.getShowSyntheticMembers()));
             decompilerSettings.setExcludeNestedTypes(
-                    prefs.getBoolean(EXCLUDE_NESTED_TYPES_ID, decompilerSettings.getExcludeNestedTypes()));
+                prefs.getBoolean(EXCLUDE_NESTED_TYPES_ID, decompilerSettings.getExcludeNestedTypes()));
             decompilerSettings.setForceExplicitTypeArguments(prefs.getBoolean(FORCE_EXPLICIT_TYPE_ARGUMENTS_ID,
-                    decompilerSettings.getForceExplicitTypeArguments()));
+                decompilerSettings.getForceExplicitTypeArguments()));
             decompilerSettings.setRetainRedundantCasts(
-                    prefs.getBoolean(RETAIN_REDUNDANT_CASTS_ID, decompilerSettings.getRetainRedundantCasts()));
+                prefs.getBoolean(RETAIN_REDUNDANT_CASTS_ID, decompilerSettings.getRetainRedundantCasts()));
             decompilerSettings.setIncludeErrorDiagnostics(
-                    prefs.getBoolean(INCLUDE_ERROR_DIAGNOSTICS_ID, decompilerSettings.getIncludeErrorDiagnostics()));
+                prefs.getBoolean(INCLUDE_ERROR_DIAGNOSTICS_ID, decompilerSettings.getIncludeErrorDiagnostics()));
             decompilerSettings.setLanguage(
-                    findLanguageByName(prefs.get(LANGUAGE_NAME_ID, decompilerSettings.getLanguage().getName())));
+                findLanguageByName(prefs.get(LANGUAGE_NAME_ID, decompilerSettings.getLanguage().getName())));
             decompilerSettings.setUnicodeOutputEnabled(prefs.getBoolean(UNICODE_REPLACE_ENABLED_ID, false));
             
             mainWindowPosition = loadWindowPosition(prefs, MAIN_WINDOW_ID_PREFIX);
@@ -130,6 +130,9 @@ public class ConfigSaver {
             } else if (field.getType() == Integer.class || field.getType() == int.class) {
                 Integer defaultInt = (Integer) (defaultVal == null ? Integer.valueOf(0) : defaultVal);
                 field.setInt(newLuytenPrefs, prefs.getInt(prefId, defaultInt));
+            } else if (field.getType().isEnum()) {
+                //noinspection unchecked,rawtypes
+                field.set(newLuytenPrefs, Enum.valueOf((Class<Enum>) field.getType(), prefs.get(prefId, defaultVal.toString())));
             }
         }
         return newLuytenPrefs;
@@ -184,6 +187,8 @@ public class ConfigSaver {
                 
             } else if (field.getType() == Integer.class || field.getType() == int.class) {
                 prefs.putInt(prefId, (Integer) (value == null ? Integer.valueOf(0) : value));
+            } else if (field.getType().isEnum()) {
+                prefs.put(prefId, ((Enum<?>) value).name());
             }
         }
     }
