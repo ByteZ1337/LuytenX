@@ -5,13 +5,12 @@ This is a fork of [Luyten](https://github.com/deathmarine/Luyten) including a de
 
 Planned features are:
 
-* More decompilers
 * More themes
 * Krakatau disassembler
 
 **Still not one of the best**
 
-Decompiler Gui for Procyon
+Decompiler Gui for Procyon and CFR
 
 Licensed under Apache Version 2.0
 
