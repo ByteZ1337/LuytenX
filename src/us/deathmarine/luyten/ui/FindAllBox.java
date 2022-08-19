@@ -14,7 +14,10 @@ import javax.swing.*;
 import javax.swing.GroupLayout.Alignment;
 import java.awt.*;
 import java.awt.event.*;
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.InputStreamReader;
+import java.io.StringWriter;
 import java.util.Collections;
 import java.util.Enumeration;
 import java.util.jar.JarEntry;
@@ -90,7 +93,7 @@ public class FindAllBox extends JDialog {
                         TypeReference type = Model.metadataSystem.lookupType(internalName);
                         try {
                             mainWindow.getSelectedModel().extractClassToTextPane(type, array[array.length - 1], entryName,
-                                    null);
+                                null);
                         } catch (Exception e) {
                             Luyten.showExceptionDialog("Exception!", e);
                         }
@@ -99,8 +102,8 @@ public class FindAllBox extends JDialog {
                         try {
                             JarFile jfile = new JarFile(mainWindow.getSelectedModel().getOpenedFile());
                             mainWindow.getSelectedModel().extractSimpleFileEntryToTextPane(
-                                    jfile.getInputStream(jfile.getEntry(entryName)), array[array.length - 1],
-                                    entryName);
+                                jfile.getInputStream(jfile.getEntry(entryName)), array[array.length - 1],
+                                entryName);
                             jfile.close();
                         } catch (Exception e) {
                             e.printStackTrace();
@@ -112,7 +115,7 @@ public class FindAllBox extends JDialog {
         });
         list.setLayoutOrientation(JList.VERTICAL);
         JScrollPane listScroller = new JScrollPane(list, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,
-                JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+            JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
         
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         int width = (int) (screenSize.width * 0.35);
@@ -131,34 +134,34 @@ public class FindAllBox extends JDialog {
         layout.setAutoCreateContainerGaps(true);
         
         layout.setHorizontalGroup(
-                layout.createSequentialGroup().addComponent(label)
-                        .addGroup(
-                                layout.createParallelGroup(Alignment.LEADING).addComponent(statusLabel)
-                                        .addComponent(textField)
-                                        .addGroup(layout.createSequentialGroup()
-                                                .addGroup(layout.createParallelGroup(Alignment.LEADING)
-                                                        .addComponent(mcase))
-                                                .addGroup(layout.createParallelGroup(Alignment.LEADING).addComponent(wholew))
-                                                .addGroup(layout.createParallelGroup(Alignment.LEADING).addComponent(regex))
-                                                .addGroup(layout.createParallelGroup(Alignment.LEADING).addComponent(classname)))
-                                        .addGroup(layout.createSequentialGroup()
-                                                .addGroup(layout.createParallelGroup(Alignment.LEADING).addComponent(listScroller)
-                                                        .addComponent(progressBar))))
-                        .addGroup(layout.createParallelGroup(Alignment.LEADING).addComponent(findButton))
+            layout.createSequentialGroup().addComponent(label)
+                .addGroup(
+                    layout.createParallelGroup(Alignment.LEADING).addComponent(statusLabel)
+                        .addComponent(textField)
+                        .addGroup(layout.createSequentialGroup()
+                            .addGroup(layout.createParallelGroup(Alignment.LEADING)
+                                .addComponent(mcase))
+                            .addGroup(layout.createParallelGroup(Alignment.LEADING).addComponent(wholew))
+                            .addGroup(layout.createParallelGroup(Alignment.LEADING).addComponent(regex))
+                            .addGroup(layout.createParallelGroup(Alignment.LEADING).addComponent(classname)))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGroup(layout.createParallelGroup(Alignment.LEADING).addComponent(listScroller)
+                                .addComponent(progressBar))))
+                .addGroup(layout.createParallelGroup(Alignment.LEADING).addComponent(findButton))
         
         );
         
         layout.linkSize(SwingConstants.HORIZONTAL, findButton);
         layout.setVerticalGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(Alignment.BASELINE).addComponent(label).addComponent(textField)
-                        .addComponent(findButton))
-                .addGroup(layout.createParallelGroup(Alignment.BASELINE).addComponent(mcase).addComponent(wholew)
-                        .addComponent(regex).addComponent(classname))
-                .addGroup(layout.createParallelGroup(Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(Alignment.BASELINE).addComponent(listScroller))))
-                .addGroup(layout.createParallelGroup(Alignment.LEADING)).addComponent(statusLabel)
-                .addComponent(progressBar));
+            .addGroup(layout.createParallelGroup(Alignment.BASELINE).addComponent(label).addComponent(textField)
+                .addComponent(findButton))
+            .addGroup(layout.createParallelGroup(Alignment.BASELINE).addComponent(mcase).addComponent(wholew)
+                .addComponent(regex).addComponent(classname))
+            .addGroup(layout.createParallelGroup(Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGroup(layout.createParallelGroup(Alignment.BASELINE).addComponent(listScroller))))
+            .addGroup(layout.createParallelGroup(Alignment.LEADING)).addComponent(statusLabel)
+            .addComponent(progressBar));
         this.adjustWindowPositionBySavedState();
         this.setSaveWindowPositionOnClosing();
         
@@ -185,7 +188,7 @@ public class FindAllBox extends JDialog {
                     DecompilerSettings settings = configSaver.getDecompilerSettings();
                     File inFile = mainWindow.getSelectedModel().getOpenedFile();
                     boolean filter = ConfigSaver.getLoadedInstance().getLuytenPreferences()
-                            .isFilterOutInnerClassEntries();
+                        .isFilterOutInnerClassEntries();
                     try {
                         JarFile jfile = new JarFile(inFile);
                         Enumeration<JarEntry> entLength = jfile.entries();
@@ -218,9 +221,9 @@ public class FindAllBox extends JDialog {
                                         decompilationOptions.setFullDecompilation(true);
                                         PlainTextOutput plainTextOutput = new PlainTextOutput(stringwriter);
                                         plainTextOutput.setUnicodeOutputEnabled(
-                                                decompilationOptions.getSettings().isUnicodeOutputEnabled());
+                                            decompilationOptions.getSettings().isUnicodeOutputEnabled());
                                         settings.getLanguage().decompileType(resolvedType, plainTextOutput,
-                                                decompilationOptions);
+                                            decompilationOptions);
                                         if (search(stringwriter.toString()))
                                             addClassName(entry.getName());
                                     }
@@ -229,7 +232,7 @@ public class FindAllBox extends JDialog {
                                     StringBuilder sb = new StringBuilder();
                                     long nonprintableCharactersCount = 0;
                                     try (InputStreamReader inputStreamReader = new InputStreamReader(
-                                            jfile.getInputStream(entry));
+                                        jfile.getInputStream(entry));
                                          BufferedReader reader = new BufferedReader(inputStreamReader)) {
                                         String line;
                                         while ((line = reader.readLine()) != null) {

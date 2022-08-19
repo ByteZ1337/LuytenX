@@ -48,7 +48,6 @@ public class CFRLinkProvider implements LinkProvider {
     
     private static class DecompilerOutputSinkFactory implements OutputSinkFactory {
         
-        
         private Consumer<String> decompiledConsumer;
         
         public DecompilerOutputSinkFactory(Consumer<String> decompiledConsumer) {
@@ -70,7 +69,6 @@ public class CFRLinkProvider implements LinkProvider {
             return res -> {
             };
         }
-        
         
     }
     

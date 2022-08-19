@@ -70,7 +70,7 @@ public class FindBox extends JDialog {
         
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         final Dimension center = new Dimension((int) (screenSize.width * 0.35),
-                Math.min((int) (screenSize.height * 0.20), 200));
+            Math.min((int) (screenSize.height * 0.20), 200));
         final int x = (int) (center.width * 0.2);
         final int y = (int) (center.height * 0.2);
         this.setBounds(x, y, center.width, center.height);
@@ -82,25 +82,25 @@ public class FindBox extends JDialog {
         layout.setAutoCreateContainerGaps(true);
         
         layout.setHorizontalGroup(layout.createSequentialGroup().addComponent(label)
-                .addGroup(layout.createParallelGroup(Alignment.LEADING).addComponent(textField)
-                        .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(Alignment.LEADING).addComponent(mcase)
-                                        .addComponent(wholew).addComponent(wrap))
-                                .addGroup(layout.createParallelGroup(Alignment.LEADING).addComponent(regex)
-                                        .addComponent(reverse))))
-                .addGroup(layout.createParallelGroup(Alignment.LEADING).addComponent(findButton)));
+            .addGroup(layout.createParallelGroup(Alignment.LEADING).addComponent(textField)
+                .addGroup(layout.createSequentialGroup()
+                    .addGroup(layout.createParallelGroup(Alignment.LEADING).addComponent(mcase)
+                        .addComponent(wholew).addComponent(wrap))
+                    .addGroup(layout.createParallelGroup(Alignment.LEADING).addComponent(regex)
+                        .addComponent(reverse))))
+            .addGroup(layout.createParallelGroup(Alignment.LEADING).addComponent(findButton)));
         
         layout.linkSize(SwingConstants.HORIZONTAL, findButton);
         layout.setVerticalGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(Alignment.BASELINE).addComponent(label).addComponent(textField)
-                        .addComponent(findButton))
-                .addGroup(layout.createParallelGroup(Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(Alignment.BASELINE).addComponent(mcase)
-                                        .addComponent(regex))
-                                .addGroup(layout.createParallelGroup(Alignment.BASELINE).addComponent(wholew)
-                                        .addComponent(reverse))
-                                .addGroup(layout.createParallelGroup(Alignment.BASELINE).addComponent(wrap)))));
+            .addGroup(layout.createParallelGroup(Alignment.BASELINE).addComponent(label).addComponent(textField)
+                .addComponent(findButton))
+            .addGroup(layout.createParallelGroup(Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGroup(layout.createParallelGroup(Alignment.BASELINE).addComponent(mcase)
+                        .addComponent(regex))
+                    .addGroup(layout.createParallelGroup(Alignment.BASELINE).addComponent(wholew)
+                        .addComponent(reverse))
+                    .addGroup(layout.createParallelGroup(Alignment.BASELINE).addComponent(wrap)))));
         
         this.adjustWindowPositionBySavedState();
         this.setSaveWindowPositionOnClosing();

@@ -173,7 +173,7 @@ public class Luyten {
         });
         JScrollPane scroll = new JScrollPane(exception);
         scroll.setBorder(new CompoundBorder(BorderFactory.createTitledBorder("Stacktrace"),
-                new BevelBorder(BevelBorder.LOWERED)));
+            new BevelBorder(BevelBorder.LOWERED)));
         pane.add(scroll);
         final String issue = "https://github.com/deathmarine/Luyten/issues";
         final JLabel link = new JLabel("<HTML>Submit to <FONT color=\"#000099\"><U>" + issue + "</U></FONT></HTML>");

@@ -166,14 +166,14 @@ public class MainMenuBar extends JMenuBar {
         fileMenu.removeAll();
         JMenuItem menuItem = new JMenuItem("Open File...");
         menuItem.setAccelerator(
-                KeyStroke.getKeyStroke(KeyEvent.VK_O, Toolkit.getDefaultToolkit().getMenuShortcutKeyMask()));
+            KeyStroke.getKeyStroke(KeyEvent.VK_O, Toolkit.getDefaultToolkit().getMenuShortcutKeyMask()));
         menuItem.addActionListener(e -> mainWindow.onOpenFileMenu());
         fileMenu.add(menuItem);
         fileMenu.addSeparator();
         
         menuItem = new JMenuItem("Close File");
         menuItem.setAccelerator(
-                KeyStroke.getKeyStroke(KeyEvent.VK_W, Toolkit.getDefaultToolkit().getMenuShortcutKeyMask()));
+            KeyStroke.getKeyStroke(KeyEvent.VK_W, Toolkit.getDefaultToolkit().getMenuShortcutKeyMask()));
         menuItem.addActionListener(e -> {
             JTabbedPane house = mainWindow.getSelectedModel().house;
             
@@ -188,13 +188,13 @@ public class MainMenuBar extends JMenuBar {
         
         menuItem = new JMenuItem("Save As...");
         menuItem.setAccelerator(
-                KeyStroke.getKeyStroke(KeyEvent.VK_E, Toolkit.getDefaultToolkit().getMenuShortcutKeyMask()));
+            KeyStroke.getKeyStroke(KeyEvent.VK_E, Toolkit.getDefaultToolkit().getMenuShortcutKeyMask()));
         menuItem.addActionListener(e -> mainWindow.onSaveAsMenu());
         fileMenu.add(menuItem);
         
         menuItem = new JMenuItem("Save All...");
         menuItem.setAccelerator(
-                KeyStroke.getKeyStroke(KeyEvent.VK_E, Toolkit.getDefaultToolkit().getMenuShortcutKeyMask()));
+            KeyStroke.getKeyStroke(KeyEvent.VK_E, Toolkit.getDefaultToolkit().getMenuShortcutKeyMask()));
         menuItem.addActionListener(e -> mainWindow.onSaveAllMenu());
         fileMenu.add(menuItem);
         fileMenu.addSeparator();
@@ -227,19 +227,19 @@ public class MainMenuBar extends JMenuBar {
         editMenu.removeAll();
         JMenuItem menuItem = new JMenuItem("Cut");
         menuItem.setAccelerator(
-                KeyStroke.getKeyStroke(KeyEvent.VK_X, Toolkit.getDefaultToolkit().getMenuShortcutKeyMask()));
+            KeyStroke.getKeyStroke(KeyEvent.VK_X, Toolkit.getDefaultToolkit().getMenuShortcutKeyMask()));
         menuItem.setEnabled(false);
         editMenu.add(menuItem);
         
         menuItem = new JMenuItem("Copy");
         menuItem.addActionListener(new DefaultEditorKit.CopyAction());
         menuItem.setAccelerator(
-                KeyStroke.getKeyStroke(KeyEvent.VK_C, Toolkit.getDefaultToolkit().getMenuShortcutKeyMask()));
+            KeyStroke.getKeyStroke(KeyEvent.VK_C, Toolkit.getDefaultToolkit().getMenuShortcutKeyMask()));
         editMenu.add(menuItem);
         
         menuItem = new JMenuItem("Paste");
         menuItem.setAccelerator(
-                KeyStroke.getKeyStroke(KeyEvent.VK_V, Toolkit.getDefaultToolkit().getMenuShortcutKeyMask()));
+            KeyStroke.getKeyStroke(KeyEvent.VK_V, Toolkit.getDefaultToolkit().getMenuShortcutKeyMask()));
         menuItem.setEnabled(false);
         editMenu.add(menuItem);
         
@@ -247,20 +247,20 @@ public class MainMenuBar extends JMenuBar {
         
         menuItem = new JMenuItem("Select All");
         menuItem.setAccelerator(
-                KeyStroke.getKeyStroke(KeyEvent.VK_A, Toolkit.getDefaultToolkit().getMenuShortcutKeyMask()));
+            KeyStroke.getKeyStroke(KeyEvent.VK_A, Toolkit.getDefaultToolkit().getMenuShortcutKeyMask()));
         menuItem.addActionListener(e -> mainWindow.onSelectAllMenu());
         editMenu.add(menuItem);
         editMenu.addSeparator();
         
         menuItem = new JMenuItem("Find...");
         menuItem.setAccelerator(
-                KeyStroke.getKeyStroke(KeyEvent.VK_F, Toolkit.getDefaultToolkit().getMenuShortcutKeyMask()));
+            KeyStroke.getKeyStroke(KeyEvent.VK_F, Toolkit.getDefaultToolkit().getMenuShortcutKeyMask()));
         menuItem.addActionListener(e -> mainWindow.onFindMenu());
         editMenu.add(menuItem);
         
         menuItem = new JMenuItem("Find Next");
         menuItem.setAccelerator(
-                KeyStroke.getKeyStroke(KeyEvent.VK_F3, 0));
+            KeyStroke.getKeyStroke(KeyEvent.VK_F3, 0));
         menuItem.addActionListener(e -> {
             if (mainWindow.findBox != null) mainWindow.findBox.fireExploreAction(true);
         });
@@ -268,7 +268,7 @@ public class MainMenuBar extends JMenuBar {
         
         menuItem = new JMenuItem("Find Previous");
         menuItem.setAccelerator(
-                KeyStroke.getKeyStroke(KeyEvent.VK_F3, InputEvent.SHIFT_DOWN_MASK));
+            KeyStroke.getKeyStroke(KeyEvent.VK_F3, InputEvent.SHIFT_DOWN_MASK));
         menuItem.addActionListener(e -> {
             if (mainWindow.findBox != null) mainWindow.findBox.fireExploreAction(false);
         });
@@ -276,7 +276,7 @@ public class MainMenuBar extends JMenuBar {
         
         menuItem = new JMenuItem("Find All");
         menuItem.setAccelerator(
-                KeyStroke.getKeyStroke(KeyEvent.VK_G, Toolkit.getDefaultToolkit().getMenuShortcutKeyMask()));
+            KeyStroke.getKeyStroke(KeyEvent.VK_G, Toolkit.getDefaultToolkit().getMenuShortcutKeyMask()));
         menuItem.addActionListener(e -> mainWindow.onFindAllMenu());
         editMenu.add(menuItem);
     }
@@ -489,7 +489,7 @@ public class MainMenuBar extends JMenuBar {
             pane.add(new JLabel("FisheyLP, and Syquel"));
             pane.add(new JLabel(" "));
             pane.add(new JLabel("Powered By:"));
-    
+            
             String procyon = "https://github.com/mstrobel/procyon";
             link = new JLabel("<html><font color=\"#03bafc\"><u>" + procyon + "</u></font></html>");
             link.setCursor(new Cursor(Cursor.HAND_CURSOR));
@@ -497,7 +497,7 @@ public class MainMenuBar extends JMenuBar {
             pane.add(link);
             pane.add(new JLabel("Version: " + Procyon.version()));
             pane.add(new JLabel("(c) 2018 Mike Strobel"));
-    
+            
             String cfr = "https://github.com/leibnitz27/cfr";
             link = new JLabel("<html><font color=\"#03bafc\"><u>" + cfr + "</u></font></html>");
             link.setCursor(new Cursor(Cursor.HAND_CURSOR));

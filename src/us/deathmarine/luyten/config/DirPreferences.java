@@ -1,7 +1,6 @@
 package us.deathmarine.luyten.config;
 
 import us.deathmarine.luyten.Luyten;
-import us.deathmarine.luyten.config.LuytenPreferences;
 
 import javax.swing.*;
 import java.io.File;

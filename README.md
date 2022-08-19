@@ -45,7 +45,7 @@ Licensed under Apache Version 2.0
 ### RSyntaxTextArea
 
 &copy; 2012 Robert Futrell  
-[https://github.com/bobbylight/RSyntaxTextArea](https://github.com/bobbylight/RSyntaxTextArea)
+[https://github.com/bobbylight/RSyntaxTextArea](https://github.com/bobbylight/RSyntaxTextArea)  
 [All Rights Reserved](https://github.com/bobbylight/RSyntaxTextArea/blob/master/LICENSE.md)
 
 ### DarkLaf

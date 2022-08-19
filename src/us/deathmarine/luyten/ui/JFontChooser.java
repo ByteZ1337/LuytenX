@@ -48,7 +48,7 @@ public class JFontChooser extends JComponent {
     private static final Font DEFAULT_FONT = new Font("Dialog", Font.PLAIN, 10);
     private static final int[] FONT_STYLE_CODES = {Font.PLAIN, Font.BOLD, Font.ITALIC, Font.BOLD | Font.ITALIC};
     private static final String[] DEFAULT_FONT_SIZE_STRINGS = {"8", "9", "10", "11", "12", "14", "16", "18", "20",
-            "22", "24", "26", "28", "36", "48", "72",};
+        "22", "24", "26", "28", "36", "48", "72",};
     
     // instance variables
     protected int dialogResultValue = ERROR_OPTION;
@@ -112,7 +112,7 @@ public class JFontChooser extends JComponent {
             fontFamilyTextField.addFocusListener(new TextFieldFocusHandlerForTextSelection(fontFamilyTextField));
             fontFamilyTextField.addKeyListener(new TextFieldKeyHandlerForListSelectionUpDown(getFontFamilyList()));
             fontFamilyTextField.getDocument()
-                    .addDocumentListener(new ListSearchTextFieldDocumentHandler(getFontFamilyList()));
+                .addDocumentListener(new ListSearchTextFieldDocumentHandler(getFontFamilyList()));
             fontFamilyTextField.setFont(DEFAULT_FONT);
             
         }
@@ -125,7 +125,7 @@ public class JFontChooser extends JComponent {
             fontStyleTextField.addFocusListener(new TextFieldFocusHandlerForTextSelection(fontStyleTextField));
             fontStyleTextField.addKeyListener(new TextFieldKeyHandlerForListSelectionUpDown(getFontStyleList()));
             fontStyleTextField.getDocument()
-                    .addDocumentListener(new ListSearchTextFieldDocumentHandler(getFontStyleList()));
+                .addDocumentListener(new ListSearchTextFieldDocumentHandler(getFontStyleList()));
             fontStyleTextField.setFont(DEFAULT_FONT);
             
         }
@@ -138,7 +138,7 @@ public class JFontChooser extends JComponent {
             fontSizeTextField.addFocusListener(new TextFieldFocusHandlerForTextSelection(fontSizeTextField));
             fontSizeTextField.addKeyListener(new TextFieldKeyHandlerForListSelectionUpDown(getFontSizeList()));
             fontSizeTextField.getDocument()
-                    .addDocumentListener(new ListSearchTextFieldDocumentHandler(getFontSizeList()));
+                .addDocumentListener(new ListSearchTextFieldDocumentHandler(getFontSizeList()));
             fontSizeTextField.setFont(DEFAULT_FONT);
         }
         return fontSizeTextField;
@@ -162,7 +162,7 @@ public class JFontChooser extends JComponent {
                                                               boolean isSelected, boolean cellHasFocus) {
                     
                     JLabel renderer = (JLabel) defaultRenderer.getListCellRendererComponent(list, value, index,
-                            isSelected, cellHasFocus);
+                        isSelected, cellHasFocus);
                     
                     if (value instanceof String) {
                         renderer.setText((String) value);
@@ -195,13 +195,13 @@ public class JFontChooser extends JComponent {
                                                               boolean isSelected, boolean cellHasFocus) {
                     
                     JLabel renderer = (JLabel) defaultRenderer.getListCellRendererComponent(list, value, index,
-                            isSelected, cellHasFocus);
+                        isSelected, cellHasFocus);
                     
                     if (value instanceof String) {
                         renderer.setText((String) value);
                         //noinspection MagicConstant
                         renderer.setFont(
-                                new Font(DEFAULT_FONT.getName(), FONT_STYLE_CODES[index], DEFAULT_FONT.getSize() + 2));
+                            new Font(DEFAULT_FONT.getName(), FONT_STYLE_CODES[index], DEFAULT_FONT.getSize() + 2));
                     } else {
                         renderer.setText("");
                     }
@@ -554,7 +554,7 @@ public class JFontChooser extends JComponent {
     
     protected JDialog createDialog(Component parent) {
         Frame frame = parent instanceof Frame ? (Frame) parent
-                : (Frame) SwingUtilities.getAncestorOfClass(Frame.class, parent);
+            : (Frame) SwingUtilities.getAncestorOfClass(Frame.class, parent);
         JDialog dialog = new JDialog(frame, ("Select Font"), true);
         
         Action okAction = new DialogOKAction(dialog);

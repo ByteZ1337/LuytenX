@@ -6,10 +6,10 @@ import com.strobel.decompiler.DecompilationOptions;
 import com.strobel.decompiler.DecompilerSettings;
 import com.strobel.decompiler.PlainTextOutput;
 import com.strobel.decompiler.languages.java.JavaFormattingOptions;
-import us.deathmarine.luyten.util.JarEntryFilter;
 import us.deathmarine.luyten.Luyten;
 import us.deathmarine.luyten.config.ConfigSaver;
 import us.deathmarine.luyten.config.LuytenPreferences;
+import us.deathmarine.luyten.util.JarEntryFilter;
 import us.deathmarine.luyten.util.LuytenTypeLoader;
 
 import javax.swing.*;
@@ -58,7 +58,7 @@ public class FileSaver {
             long time = System.currentTimeMillis();
             try (FileOutputStream fos = new FileOutputStream(file);
                  OutputStreamWriter writer = isUnicodeEnabled ? new OutputStreamWriter(fos, StandardCharsets.UTF_8)
-                         : new OutputStreamWriter(fos);
+                     : new OutputStreamWriter(fos);
                  BufferedWriter bw = new BufferedWriter(writer)) {
                 label.setText("Extracting: " + file.getName());
                 bar.setVisible(true);
@@ -162,7 +162,7 @@ public class FileSaver {
                                 throw new Exception("Unable to resolve type.");
                             }
                             Writer writer = isUnicodeEnabled ? new OutputStreamWriter(out, StandardCharsets.UTF_8)
-                                    : new OutputStreamWriter(out);
+                                : new OutputStreamWriter(out);
                             PlainTextOutput plainTextOutput = new PlainTextOutput(writer);
                             plainTextOutput.setUnicodeOutputEnabled(isUnicodeEnabled);
                             settings.getLanguage().decompileType(resolvedType, plainTextOutput, decompilationOptions);
@@ -231,7 +231,7 @@ public class FileSaver {
         System.out.println("[SaveAll]: " + inFile.getName() + " -> " + outFile.getName());
         try (FileOutputStream fos = new FileOutputStream(outFile);
              OutputStreamWriter writer = isUnicodeEnabled ? new OutputStreamWriter(fos, StandardCharsets.UTF_8)
-                     : new OutputStreamWriter(fos);
+                 : new OutputStreamWriter(fos);
              BufferedWriter bw = new BufferedWriter(writer)) {
             bw.write(decompiledSource);
             bw.flush();
@@ -267,7 +267,7 @@ public class FileSaver {
             newSettings.setLanguage(settings.getLanguage());
             newSettings.setShowSyntheticMembers(settings.getShowSyntheticMembers());
             newSettings.setAlwaysGenerateExceptionVariableForCatchBlocks(
-                    settings.getAlwaysGenerateExceptionVariableForCatchBlocks());
+                settings.getAlwaysGenerateExceptionVariableForCatchBlocks());
             newSettings.setOutputDirectory(settings.getOutputDirectory());
             newSettings.setRetainRedundantCasts(settings.getRetainRedundantCasts());
             newSettings.setIncludeErrorDiagnostics(settings.getIncludeErrorDiagnostics());

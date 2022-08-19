@@ -19,19 +19,19 @@ public class CellRenderer extends DefaultTreeCellRenderer {
     
     public CellRenderer() {
         this.pack = new ImageIcon(
-                Toolkit.getDefaultToolkit().getImage(this.getClass().getResource("/resources/package_obj.png")));
+            Toolkit.getDefaultToolkit().getImage(this.getClass().getResource("/resources/package_obj.png")));
         this.classIcon = new ImageIcon(
-                Toolkit.getDefaultToolkit().getImage(this.getClass().getResource("/resources/java.png")));
+            Toolkit.getDefaultToolkit().getImage(this.getClass().getResource("/resources/java.png")));
         this.htmlIcon = new ImageIcon(
-                Toolkit.getDefaultToolkit().getImage(this.getClass().getResource("/resources/html.png")));
+            Toolkit.getDefaultToolkit().getImage(this.getClass().getResource("/resources/html.png")));
         this.cssIcon = new ImageIcon(
-                Toolkit.getDefaultToolkit().getImage(this.getClass().getResource("/resources/css.png")));
+            Toolkit.getDefaultToolkit().getImage(this.getClass().getResource("/resources/css.png")));
         this.textIcon = new ImageIcon(
-                Toolkit.getDefaultToolkit().getImage(this.getClass().getResource("/resources/text.png")));
+            Toolkit.getDefaultToolkit().getImage(this.getClass().getResource("/resources/text.png")));
         this.imageIcon = new ImageIcon(
-                Toolkit.getDefaultToolkit().getImage(this.getClass().getResource("/resources/image.png")));
+            Toolkit.getDefaultToolkit().getImage(this.getClass().getResource("/resources/image.png")));
         this.fileIcon = new ImageIcon(
-                Toolkit.getDefaultToolkit().getImage(this.getClass().getResource("/resources/file.png")));
+            Toolkit.getDefaultToolkit().getImage(this.getClass().getResource("/resources/file.png")));
     }
     
     @Override

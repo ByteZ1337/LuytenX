@@ -76,8 +76,8 @@ public class Model extends JSplitPane {
         try {
             String themeXml = luytenPrefs.getThemeXml();
             InputStream in = themeXml.equals("onedark.xml")
-                    ? getClass().getResourceAsStream("/resources/" + themeXml)
-                    : getClass().getResourceAsStream(LuytenPreferences.THEME_XML_PATH + themeXml);
+                ? getClass().getResourceAsStream("/resources/" + themeXml)
+                : getClass().getResourceAsStream(LuytenPreferences.THEME_XML_PATH + themeXml);
             setTheme(Theme.load(in));
         } catch (Exception e1) {
             try {
@@ -227,7 +227,7 @@ public class Model extends JSplitPane {
         @Override
         public void mousePressed(MouseEvent event) {
             boolean isClickCountMatches = (event.getClickCount() == 1 && luytenPrefs.isSingleClickOpenEnabled())
-                    || (event.getClickCount() == 2 && !luytenPrefs.isSingleClickOpenEnabled());
+                || (event.getClickCount() == 2 && !luytenPrefs.isSingleClickOpenEnabled());
             if (!isClickCountMatches)
                 return;
             
@@ -356,7 +356,7 @@ public class Model extends JSplitPane {
     }
     
     public void extractClassToTextPane(TypeReference type, String tabTitle, String path, String navigatonLink)
-            throws Exception {
+        throws Exception {
         if (tabTitle == null || tabTitle.trim().length() < 1 || path == null) {
             throw new FileEntryNotFoundException();
         }
@@ -401,7 +401,7 @@ public class Model extends JSplitPane {
     }
     
     public void extractSimpleFileEntryToTextPane(InputStream inputStream, String tabTitle, String path)
-            throws Exception {
+        throws Exception {
         if (inputStream == null || tabTitle == null || tabTitle.trim().length() < 1 || path == null) {
             throw new FileEntryNotFoundException();
         }
@@ -438,7 +438,7 @@ public class Model extends JSplitPane {
         // guess binary or text
         String extension = "." + tabTitle.replaceAll("^[^\\.]*$", "").replaceAll("[^\\.]*\\.", "");
         boolean isTextFile = (OpenFile.WELL_KNOWN_TEXT_FILE_EXTENSIONS.contains(extension)
-                || nonprintableCharactersCount < sb.length() / 5);
+            || nonprintableCharactersCount < sb.length() / 5);
         if (!isTextFile) {
             throw new FileIsBinaryException();
         }
@@ -545,7 +545,7 @@ public class Model extends JSplitPane {
     public static class Tab extends JPanel {
         private JLabel tabTitle;
         private JLabel closeButton = new JLabel(new ImageIcon(
-                Toolkit.getDefaultToolkit().getImage(this.getClass().getResource("/resources/icon_close.png"))));
+            Toolkit.getDefaultToolkit().getImage(this.getClass().getResource("/resources/icon_close.png"))));
         
         public Tab(String title, final Callable<Void> onCloseTabAction) {
             super(new GridBagLayout());
@@ -772,7 +772,7 @@ public class Model extends JSplitPane {
             }
             packages.get(packagePath).add(packageEntry);
             if (!entry.startsWith("META-INF") && packageRoot.trim().length() > 0
-                    && entry.matches(".*\\.(class|java|prop|properties)$")) {
+                && entry.matches(".*\\.(class|java|prop|properties)$")) {
                 classContainingPackageRoots.add(packageRoot);
             }
         }
@@ -807,7 +807,7 @@ public class Model extends JSplitPane {
         for (String packagePath : packages.keySet()) {
             String packageRoot = packagePath.replaceAll("/.*$", "");
             if (!classContainingPackageRoots.contains(packageRoot) && !packagePath.startsWith("META-INF")
-                    && packagePath.length() > 0) {
+                && packagePath.length() > 0) {
                 List<String> packagePathElements = Arrays.asList(packagePath.split("/"));
                 for (String entry : packages.get(packagePath)) {
                     ArrayList<String> list = new ArrayList<>(packagePathElements);
@@ -855,8 +855,8 @@ public class Model extends JSplitPane {
     
     public void changeTheme(String xml) {
         InputStream in = xml.equals("onedark.xml")
-                ? getClass().getResourceAsStream("/resources/" + xml)
-                : getClass().getResourceAsStream(LuytenPreferences.THEME_XML_PATH + xml);
+            ? getClass().getResourceAsStream("/resources/" + xml)
+            : getClass().getResourceAsStream(LuytenPreferences.THEME_XML_PATH + xml);
         try {
             if (in != null) {
                 setTheme(Theme.load(in));
@@ -927,7 +927,7 @@ public class Model extends JSplitPane {
                 StringWriter stringwriter = new StringWriter();
                 PlainTextOutput plainTextOutput = new PlainTextOutput(stringwriter);
                 plainTextOutput
-                        .setUnicodeOutputEnabled(decompilationOptions.getSettings().isUnicodeOutputEnabled());
+                    .setUnicodeOutputEnabled(decompilationOptions.getSettings().isUnicodeOutputEnabled());
                 settings.getLanguage().decompileType(resolvedType, plainTextOutput, decompilationOptions);
                 String decompiledSource = stringwriter.toString();
                 OpenFile open = new OpenFile(internalName, "*/" + internalName, getTheme(), mainWindow, this);
