@@ -4,6 +4,7 @@ import com.strobel.Procyon;
 import com.strobel.decompiler.DecompilerSettings;
 import com.strobel.decompiler.languages.Language;
 import com.strobel.decompiler.languages.Languages;
+import org.benf.cfr.reader.util.CfrVersionInfo;
 import us.deathmarine.luyten.Luyten;
 import us.deathmarine.luyten.RecentFiles;
 import us.deathmarine.luyten.config.ConfigSaver;
@@ -488,30 +489,38 @@ public class MainMenuBar extends JMenuBar {
             pane.add(new JLabel("FisheyLP, and Syquel"));
             pane.add(new JLabel(" "));
             pane.add(new JLabel("Powered By:"));
-            
-            String procyon = "https://bitbucket.org/mstrobel/procyon";
+    
+            String procyon = "https://github.com/mstrobel/procyon";
             link = new JLabel("<html><font color=\"#03bafc\"><u>" + procyon + "</u></font></html>");
             link.setCursor(new Cursor(Cursor.HAND_CURSOR));
             link.addMouseListener(new LinkListener(procyon, link));
             pane.add(link);
-            
             pane.add(new JLabel("Version: " + Procyon.version()));
             pane.add(new JLabel("(c) 2018 Mike Strobel"));
+    
+            String cfr = "https://github.com/leibnitz27/cfr";
+            link = new JLabel("<html><font color=\"#03bafc\"><u>" + cfr + "</u></font></html>");
+            link.setCursor(new Cursor(Cursor.HAND_CURSOR));
+            link.addMouseListener(new LinkListener(cfr, link));
+            pane.add(link);
+            pane.add(new JLabel("Version: " + CfrVersionInfo.VERSION_INFO));
+            pane.add(new JLabel("(c) 2011-2019 Lee Benfield"));
+            
             String rsyntax = "https://github.com/bobbylight/RSyntaxTextArea";
             link = new JLabel("<html><font color=\"#03bafc\"><u>" + rsyntax + "</u></font></html>");
             link.setCursor(new Cursor(Cursor.HAND_CURSOR));
             link.addMouseListener(new LinkListener(rsyntax, link));
             pane.add(link);
-            pane.add(new JLabel("Version: 3.0.2"));
-            pane.add(new JLabel("(c) 2019 Robert Futrell"));
+            pane.add(new JLabel("Version: 3.2.0"));
+            pane.add(new JLabel("(c) 2021 Robert Futrell"));
             
             String darkLaf = "https://github.com/weisJ/darklaf/";
             link = new JLabel("<html><font color=\"#03bafc\"><u>" + darkLaf + "</u></font></html>");
             link.setCursor(new Cursor(Cursor.HAND_CURSOR));
             link.addMouseListener(new LinkListener(darkLaf, link));
             pane.add(link);
-            pane.add(new JLabel("Version: 2.6.1"));
-            pane.add(new JLabel("(c) 2021 Jannis Weis"));
+            pane.add(new JLabel("Version: 3.0.0"));
+            pane.add(new JLabel("(c) 2019-2022 Jannis Weis"));
             pane.add(new JLabel(" "));
             JOptionPane.showMessageDialog(null, pane);
         });

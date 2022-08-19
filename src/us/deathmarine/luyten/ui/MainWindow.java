@@ -60,7 +60,7 @@ public class MainWindow extends JFrame {
         this.setQuitOnWindowClosing();
         this.setTitle(TITLE);
         this.setIconImage(new ImageIcon(
-                Toolkit.getDefaultToolkit().getImage(this.getClass().getResource("/resources/LuytenX.png"))).getImage());
+            Toolkit.getDefaultToolkit().getImage(this.getClass().getResource("/resources/LuytenX.png"))).getImage());
         
         JPanel panel1 = new JPanel(new FlowLayout(FlowLayout.LEFT));
         label = new JLabel();
@@ -133,7 +133,7 @@ public class MainWindow extends JFrame {
         }
         
         if (jarModel != null && (fileFromCommandLine.getName().toLowerCase().endsWith(".jar")
-                || fileFromCommandLine.getName().toLowerCase().endsWith(".zip"))) {
+            || fileFromCommandLine.getName().toLowerCase().endsWith(".zip"))) {
             jarModel.startWarmUpThread();
         }
         
@@ -326,18 +326,23 @@ public class MainWindow extends JFrame {
         StringBuilder sb = new StringBuilder();
         try {
             BufferedReader reader = new BufferedReader(
-                    new InputStreamReader(getClass().getResourceAsStream("/distfiles/Procyon.License.txt")));
+                new InputStreamReader(getClass().getResourceAsStream("/distfiles/Procyon.License.txt")));
             String line;
             while ((line = reader.readLine()) != null)
                 sb.append(line).append("\n");
             sb.append("\n\n\n\n\n");
             reader = new BufferedReader(
-                    new InputStreamReader(getClass().getResourceAsStream("/distfiles/RSyntaxTextArea.License.txt")));
+                new InputStreamReader(getClass().getResourceAsStream("/distfiles/CFR.License.txt")));
             while ((line = reader.readLine()) != null)
                 sb.append(line).append("\n");
             sb.append("\n\n\n\n\n");
             reader = new BufferedReader(
-                    new InputStreamReader(getClass().getResourceAsStream("/distfiles/DarkLaf.License.txt")));
+                new InputStreamReader(getClass().getResourceAsStream("/distfiles/RSyntaxTextArea.License.txt")));
+            while ((line = reader.readLine()) != null)
+                sb.append(line).append("\n");
+            sb.append("\n\n\n\n\n");
+            reader = new BufferedReader(
+                new InputStreamReader(getClass().getResourceAsStream("/distfiles/DarkLaf.License.txt")));
             while ((line = reader.readLine()) != null)
                 sb.append(line).append("\n");
         } catch (IOException e) {
@@ -409,7 +414,7 @@ public class MainWindow extends JFrame {
                         windowPosition.setFullScreen(false);
                         if (windowPosition.isSavedWindowPositionValid()) {
                             MainWindow.this.setBounds(windowPosition.getWindowX(), windowPosition.getWindowY(),
-                                    windowPosition.getWindowWidth(), windowPosition.getWindowHeight());
+                                windowPosition.getWindowWidth(), windowPosition.getWindowHeight());
                         }
                         MainWindow.this.removeComponentListener(this);
                     }
@@ -418,7 +423,7 @@ public class MainWindow extends JFrame {
             
         } else {
             this.setBounds(windowPosition.getWindowX(), windowPosition.getWindowY(), windowPosition.getWindowWidth(),
-                    windowPosition.getWindowHeight());
+                windowPosition.getWindowHeight());
         }
     }
     

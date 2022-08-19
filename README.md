@@ -33,17 +33,24 @@ Licensed under Apache Version 2.0
 ### Procyon
 
 &copy; 2015 Mike Strobel  
-[https://bitbucket.org/mstrobel/procyon/overview](https://github.com/mstrobel/procyon)  
+[https://github.com/mstrobel/procyon](https://github.com/mstrobel/procyon)  
 [Apache License](https://github.com/mstrobel/procyon/blob/develop/License.txt)
+
+### CFR
+
+&copy; 2011-2019 Lee Benfield
+[https://github.com/leibnitz27/cfr](https://github.com/leibnitz27/cfr)
+[MIT License](https://github.com/leibnitz27/cfr/blob/master/LICENSE)
+
 
 ### RSyntaxTextArea
 
 &copy; 2012 Robert Futrell  
-[https://bobbylight.github.io/RSyntaxTextArea/](https://github.com/bobbylight/RSyntaxTextArea)
+[https://github.com/bobbylight/RSyntaxTextArea](https://github.com/bobbylight/RSyntaxTextArea)
 [All Rights Reserved](https://github.com/bobbylight/RSyntaxTextArea/blob/master/LICENSE.md)
 
 ### DarkLaf
 
-&copy; 2021 Jannis Weis  
+&copy; 2019-2022 Jannis Weis  
 [https://github.com/weisJ/darklaf/](https://github.com/weisJ/darklaf/)
 [MIT License](https://github.com/weisJ/darklaf/blob/master/LICENSE)
