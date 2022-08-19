@@ -33,14 +33,14 @@ Licensed under Apache Version 2.0
 ### Procyon
 
 &copy; 2015 Mike Strobel  
-[https://bitbucket.org/mstrobel/procyon/overview](https://bitbucket.org/mstrobel/procyon/overview)  
-[Apache License](https://github.com/deathmarine/Luyten/blob/master/src/distfiles/Procyon.License.txt)
+[https://bitbucket.org/mstrobel/procyon/overview](https://github.com/mstrobel/procyon)  
+[Apache License](https://github.com/mstrobel/procyon/blob/develop/License.txt)
 
 ### RSyntaxTextArea
 
 &copy; 2012 Robert Futrell  
-[https://bobbylight.github.io/RSyntaxTextArea/](https://bobbylight.github.io/RSyntaxTextArea/)
-[All Rights Reserved](https://github.com/deathmarine/Luyten/blob/master/src/distfiles/RSyntaxTextArea.License.txt)
+[https://bobbylight.github.io/RSyntaxTextArea/](https://github.com/bobbylight/RSyntaxTextArea)
+[All Rights Reserved](https://github.com/bobbylight/RSyntaxTextArea/blob/master/LICENSE.md)
 
 ### DarkLaf
 
