@@ -24,7 +24,7 @@ Licensed under Apache Version 2.0
 
 ## Screenshot
 
-![Screen](https://i.imgur.com/oD2pMwB.png)
+![Screen](https://i.imgur.com/2XfQQBc.png)
 
 ## Powered by
 
@@ -38,10 +38,9 @@ Licensed under Apache Version 2.0
 
 ### CFR
 
-&copy; 2011-2019 Lee Benfield
-[https://github.com/leibnitz27/cfr](https://github.com/leibnitz27/cfr)
+&copy; 2011-2019 Lee Benfield  
+[https://github.com/leibnitz27/cfr](https://github.com/leibnitz27/cfr)  
 [MIT License](https://github.com/leibnitz27/cfr/blob/master/LICENSE)
-
 
 ### RSyntaxTextArea
 
@@ -52,5 +51,5 @@ Licensed under Apache Version 2.0
 ### DarkLaf
 
 &copy; 2019-2022 Jannis Weis  
-[https://github.com/weisJ/darklaf/](https://github.com/weisJ/darklaf/)
+[https://github.com/weisJ/darklaf/](https://github.com/weisJ/darklaf/)  
 [MIT License](https://github.com/weisJ/darklaf/blob/master/LICENSE)
