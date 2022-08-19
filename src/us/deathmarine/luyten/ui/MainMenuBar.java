@@ -8,6 +8,7 @@ import us.deathmarine.luyten.Luyten;
 import us.deathmarine.luyten.RecentFiles;
 import us.deathmarine.luyten.config.ConfigSaver;
 import us.deathmarine.luyten.config.LuytenPreferences;
+import us.deathmarine.luyten.decompiler.Decompiler;
 
 import javax.swing.*;
 import javax.swing.text.DefaultEditorKit;
@@ -45,6 +46,7 @@ public class MainMenuBar extends JMenuBar {
     private JRadioButtonMenuItem bytecodeAST;
     private ButtonGroup languagesGroup;
     private ButtonGroup themesGroup;
+    private ButtonGroup decompilersGroup;
     private JCheckBoxMenuItem packageExplorerStyle;
     private JCheckBoxMenuItem filterOutInnerClassEntries;
     private JCheckBoxMenuItem singleClickOpenEnabled;
@@ -67,6 +69,9 @@ public class MainMenuBar extends JMenuBar {
         final JMenu themesMenu = new JMenu("Themes");
         themesMenu.add(new JMenuItem("..."));
         this.add(themesMenu);
+        final JMenu decompilersMenu = new JMenu("Decompilers");
+        decompilersMenu.add(new JMenuItem("..."));
+        this.add(decompilersMenu);
         final JMenu operationMenu = new JMenu("Operation");
         operationMenu.add(new JMenuItem("..."));
         this.add(operationMenu);
@@ -90,6 +95,9 @@ public class MainMenuBar extends JMenuBar {
                     
                     buildThemesMenu(themesMenu);
                     refreshMenuPopup(themesMenu);
+                    
+                    buildDecompilersMenu(decompilersMenu);
+                    refreshMenuPopup(decompilersMenu);
                     
                     buildOperationMenu(operationMenu);
                     refreshMenuPopup(operationMenu);
@@ -309,6 +317,20 @@ public class MainMenuBar extends JMenuBar {
         a.setSelected("onedark.xml".equals(luytenPrefs.getThemeXml()));
         themesGroup.add(a);
         themesMenu.add(a);
+    }
+    
+    private void buildDecompilersMenu(JMenu decompilersMenu) {
+        decompilersMenu.removeAll();
+        decompilersGroup = new ButtonGroup();
+        JRadioButtonMenuItem a = new JRadioButtonMenuItem(new DecompilerAction("Procyon", Decompiler.PROCYON));
+        a.setSelected(Decompiler.PROCYON.equals(luytenPrefs.getDecompiler()));
+        decompilersGroup.add(a);
+        decompilersMenu.add(a);
+        
+        a = new JRadioButtonMenuItem(new DecompilerAction("CFR", Decompiler.CFR));
+        a.setSelected(Decompiler.CFR.equals(luytenPrefs.getDecompiler()));
+        decompilersGroup.add(a);
+        decompilersMenu.add(a);
     }
     
     private void buildOperationMenu(JMenu operationMenu) {
@@ -550,6 +572,22 @@ public class MainMenuBar extends JMenuBar {
         public void actionPerformed(ActionEvent e) {
             luytenPrefs.setThemeXml(xml);
             mainWindow.onThemesChanged();
+        }
+    }
+    
+    private class DecompilerAction extends AbstractAction {
+        private static final long serialVersionUID = 5241351687025589732L;
+        
+        private Decompiler decompiler;
+        
+        public DecompilerAction(String name, Decompiler decompiler) {
+            putValue(NAME, name);
+            this.decompiler = decompiler;
+        }
+        
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            luytenPrefs.setDecompiler(decompiler);
         }
     }
     

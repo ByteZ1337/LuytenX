@@ -6,11 +6,12 @@ import com.strobel.decompiler.DecompilationOptions;
 import com.strobel.decompiler.DecompilerSettings;
 import com.strobel.decompiler.PlainTextOutput;
 import us.deathmarine.luyten.Luyten;
+import us.deathmarine.luyten.Model;
 
 import java.io.StringWriter;
 import java.util.*;
 
-public class DecompilerLinkProvider implements LinkProvider {
+public class ProcyonLinkProvider implements LinkProvider {
     
     private Map<String, Selection> definitionToSelectionMap = new HashMap<>();
     private Map<String, Set<Selection>> referenceToSelectionsMap = new HashMap<>();
@@ -366,7 +367,8 @@ public class DecompilerLinkProvider implements LinkProvider {
         this.decompilationOptions = decompilationOptions;
     }
     
-    public void setType(TypeDefinition type) {
+    @Override
+    public void setType(TypeDefinition type, Model model) {
         this.type = type;
     }
 }

@@ -14,8 +14,8 @@ import org.fife.ui.rsyntaxtextarea.Theme;
 import org.fife.ui.rtextarea.RTextScrollPane;
 import us.deathmarine.luyten.config.ConfigSaver;
 import us.deathmarine.luyten.config.LuytenPreferences;
-import us.deathmarine.luyten.decompiler.DecompilerLinkProvider;
 import us.deathmarine.luyten.decompiler.LinkProvider;
+import us.deathmarine.luyten.decompiler.ProcyonLinkProvider;
 import us.deathmarine.luyten.decompiler.Selection;
 import us.deathmarine.luyten.ui.JFontChooser;
 import us.deathmarine.luyten.ui.MainWindow;
@@ -35,11 +35,11 @@ import java.util.concurrent.ConcurrentHashMap;
 public class OpenFile implements SyntaxConstants {
     
     public static final HashSet<String> WELL_KNOWN_TEXT_FILE_EXTENSIONS = new HashSet<>(
-            Arrays.asList(".java", ".xml", ".rss", ".project", ".classpath", ".h", ".c", ".cpp", ".yaml", ".yml", ".ini", ".sql", ".js", ".php", ".php5",
-                    ".phtml", ".xhtm", ".xhtml", ".lua", ".bat", ".pl", ".sh", ".json", ".txt",
-                    ".rb", ".make", ".mak", ".py", ".properties", ".prop", ".MF"));
+        Arrays.asList(".java", ".xml", ".rss", ".project", ".classpath", ".h", ".c", ".cpp", ".yaml", ".yml", ".ini", ".sql", ".js", ".php", ".php5",
+            ".phtml", ".xhtm", ".xhtml", ".lua", ".bat", ".pl", ".sh", ".json", ".txt",
+            ".rb", ".make", ".mak", ".py", ".properties", ".prop", ".MF"));
     public static final HashSet<String> WELL_KNOWN_IMAGE_FILE_EXTENSIONS = new HashSet<>(
-            Arrays.asList(".png", ".jpg", ".jpeg", ".gif", ".svg"));
+        Arrays.asList(".png", ".jpg", ".jpeg", ".gif", ".svg"));
     
     // navigation links
     private TreeMap<Selection, String> selectionToUniqueStrTreeMap = new TreeMap<>();
@@ -70,11 +70,13 @@ public class OpenFile implements SyntaxConstants {
     private DecompilerSettings settings;
     private DecompilationOptions decompilationOptions;
     private TypeDefinition type;
+    private final Model model;
     
-    public OpenFile(String name, String path, Theme theme, final MainWindow mainWindow) {
+    public OpenFile(String name, String path, Theme theme, final MainWindow mainWindow, Model model) {
         this.name = name;
         this.path = path;
         this.mainWindow = mainWindow;
+        this.model = model;
         
         configSaver = ConfigSaver.getLoadedInstance();
         luytenPrefs = configSaver.getLuytenPreferences();
@@ -91,7 +93,7 @@ public class OpenFile implements SyntaxConstants {
         if (name.toLowerCase().endsWith(".class") || name.toLowerCase().endsWith(".java"))
             textArea.setSyntaxEditingStyle(SYNTAX_STYLE_JAVA);
         else if (name.toLowerCase().endsWith(".xml") || name.toLowerCase().endsWith(".rss")
-                || name.toLowerCase().endsWith(".project") || name.toLowerCase().endsWith(".classpath"))
+            || name.toLowerCase().endsWith(".project") || name.toLowerCase().endsWith(".classpath"))
             textArea.setSyntaxEditingStyle(SYNTAX_STYLE_XML);
         else if (name.toLowerCase().endsWith(".h") || name.toLowerCase().endsWith(".c"))
             textArea.setSyntaxEditingStyle(SYNTAX_STYLE_C);
@@ -102,10 +104,10 @@ public class OpenFile implements SyntaxConstants {
         else if (name.toLowerCase().endsWith(".js"))
             textArea.setSyntaxEditingStyle(SYNTAX_STYLE_JAVASCRIPT);
         else if (name.toLowerCase().endsWith(".php") || name.toLowerCase().endsWith(".php5")
-                || name.toLowerCase().endsWith(".phtml"))
+            || name.toLowerCase().endsWith(".phtml"))
             textArea.setSyntaxEditingStyle(SYNTAX_STYLE_PHP);
         else if (name.toLowerCase().endsWith(".html") || name.toLowerCase().endsWith(".htm")
-                || name.toLowerCase().endsWith(".xhtm") || name.toLowerCase().endsWith(".xhtml"))
+            || name.toLowerCase().endsWith(".xhtm") || name.toLowerCase().endsWith(".xhtml"))
             textArea.setSyntaxEditingStyle(SYNTAX_STYLE_HTML);
         else if (name.toLowerCase().endsWith(".lua"))
             textArea.setSyntaxEditingStyle(SYNTAX_STYLE_LUA);
@@ -256,7 +258,7 @@ public class OpenFile implements SyntaxConstants {
                             
                             if (limitScroll) {
                                 int blockIncr = scrollComp.getScrollableBlockIncrement(viewRect, orientation,
-                                        direction);
+                                    direction);
                                 if (direction < 0) {
                                     scrollMin = Math.max(scrollMin, toScroll.getValue() - blockIncr);
                                 } else {
@@ -266,7 +268,7 @@ public class OpenFile implements SyntaxConstants {
                             
                             for (int i = 0; i < units; i++) {
                                 int unitIncr = scrollComp.getScrollableUnitIncrement(viewRect, orientation,
-                                        direction);
+                                    direction);
                                 if (orientation == SwingConstants.VERTICAL) {
                                     if (direction < 0) {
                                         viewRect.y -= unitIncr;
@@ -347,7 +349,7 @@ public class OpenFile implements SyntaxConstants {
                                 if (limitScroll && i > 0) {
                                     assert limit != -1;
                                     if ((direction < 0 && newValue < limit)
-                                            || (direction > 0 && newValue > limit)) {
+                                        || (direction > 0 && newValue > limit)) {
                                         break;
                                     }
                                 }
@@ -459,9 +461,10 @@ public class OpenFile implements SyntaxConstants {
     
     private void decompileWithNavigationLinks() {
         this.invalidateContent();
-        DecompilerLinkProvider newLinkProvider = new DecompilerLinkProvider();
-        newLinkProvider.setDecompilerReferences(metadataSystem, settings, decompilationOptions);
-        newLinkProvider.setType(type);
+        LinkProvider newLinkProvider = luytenPrefs.getDecompiler().linkProviderSupplier.get();
+        if (newLinkProvider instanceof ProcyonLinkProvider)
+            ((ProcyonLinkProvider) newLinkProvider).setDecompilerReferences(metadataSystem, settings, decompilationOptions);
+        newLinkProvider.setType(type, model);
         linkProvider = newLinkProvider;
         
         linkProvider.generateContent();
@@ -689,7 +692,7 @@ public class OpenFile implements SyntaxConstants {
                 int currentUpperLine = textArea.getVisibleRect().y / textArea.getLineHeight();
                 
                 if (selectionLineNum <= currentUpperLine + 2
-                        || selectionLineNum >= currentUpperLine + viewportLineCount - 4) {
+                    || selectionLineNum >= currentUpperLine + viewportLineCount - 4) {
                     Rectangle rectToScroll = new Rectangle();
                     rectToScroll.x = 0;
                     rectToScroll.width = 1;
@@ -720,6 +723,10 @@ public class OpenFile implements SyntaxConstants {
     
     public void setType(TypeDefinition type) {
         this.type = type;
+    }
+    
+    public Model getModel() {
+        return model;
     }
     
     public boolean isContentValid() {

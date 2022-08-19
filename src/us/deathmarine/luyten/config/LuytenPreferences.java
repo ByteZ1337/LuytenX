@@ -1,5 +1,7 @@
 package us.deathmarine.luyten.config;
 
+import us.deathmarine.luyten.decompiler.Decompiler;
+
 /**
  * Do not instantiate this class, get the instance from ConfigSaver. All
  * not-static fields will be saved automatically named by the field's java
@@ -10,8 +12,10 @@ package us.deathmarine.luyten.config;
 public class LuytenPreferences {
     public static final String THEME_XML_PATH = "/org/fife/ui/rsyntaxtextarea/themes/";
     public static final String DEFAULT_THEME_XML = "eclipse.xml";
+    public static final Decompiler DEFAULT_DECOMPILER = Decompiler.PROCYON;
     
     private String themeXml = DEFAULT_THEME_XML;
+    private Decompiler decompiler = DEFAULT_DECOMPILER;
     private String fileOpenCurrentDirectory = "";
     private String fileSaveCurrentDirectory = "";
     private int font_size = 10;
@@ -27,6 +31,14 @@ public class LuytenPreferences {
     
     public void setThemeXml(String themeXml) {
         this.themeXml = themeXml;
+    }
+    
+    public Decompiler getDecompiler() {
+        return decompiler;
+    }
+    
+    public void setDecompiler(Decompiler decompiler) {
+        this.decompiler = decompiler;
     }
     
     public String getFileOpenCurrentDirectory() {

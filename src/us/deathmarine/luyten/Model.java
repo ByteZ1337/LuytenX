@@ -157,7 +157,7 @@ public class Model extends JSplitPane {
     }
     
     public void show(String name, String contents) {
-        OpenFile open = new OpenFile(name, "*/" + name, getTheme(), mainWindow);
+        OpenFile open = new OpenFile(name, "*/" + name, getTheme(), mainWindow, this);
         open.setContent(contents);
         openFiles.add(open);
         addOrSwitchToTab(open);
@@ -390,7 +390,7 @@ public class Model extends JSplitPane {
             sameTitledOpen.decompile();
             addOrSwitchToTab(sameTitledOpen);
         } else {
-            OpenFile open = new OpenFile(tabTitle, path, getTheme(), mainWindow);
+            OpenFile open = new OpenFile(tabTitle, path, getTheme(), mainWindow, this);
             open.setDecompilerReferences(metadataSystem, settings, decompilationOptions);
             open.setType(resolvedType);
             open.setInitialNavigationLink(navigatonLink);
@@ -444,7 +444,7 @@ public class Model extends JSplitPane {
         }
         
         // open tab
-        OpenFile open = new OpenFile(tabTitle, path, getTheme(), mainWindow);
+        OpenFile open = new OpenFile(tabTitle, path, getTheme(), mainWindow, this);
         open.setDecompilerReferences(metadataSystem, settings, decompilationOptions);
         open.setContent(sb.toString());
         openFiles.add(open);
@@ -930,7 +930,7 @@ public class Model extends JSplitPane {
                         .setUnicodeOutputEnabled(decompilationOptions.getSettings().isUnicodeOutputEnabled());
                 settings.getLanguage().decompileType(resolvedType, plainTextOutput, decompilationOptions);
                 String decompiledSource = stringwriter.toString();
-                OpenFile open = new OpenFile(internalName, "*/" + internalName, getTheme(), mainWindow);
+                OpenFile open = new OpenFile(internalName, "*/" + internalName, getTheme(), mainWindow, this);
                 open.setContent(decompiledSource);
                 JTabbedPane pane = new JTabbedPane();
                 pane.setTabLayoutPolicy(JTabbedPane.SCROLL_TAB_LAYOUT);

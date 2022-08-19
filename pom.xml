@@ -4,16 +4,23 @@
     <groupId>us.deathmarine</groupId>
     <artifactId>luyten</artifactId>
     <version>0.8.0</version>
+
+    <properties>
+        <darklaf.version>3.0.0</darklaf.version>
+        <rsyntaxtextarea.version>3.2.0</rsyntaxtextarea.version>
+        <procyon.version>0.6.0</procyon.version>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>com.github.weisj</groupId>
             <artifactId>darklaf-core</artifactId>
-            <version>2.5.5</version>
+            <version>${darklaf.version}</version>
         </dependency>
         <dependency>
             <groupId>com.fifesoft</groupId>
             <artifactId>rsyntaxtextarea</artifactId>
-            <version>3.0.2</version>
+            <version>${rsyntaxtextarea.version}</version>
         </dependency>
         <dependency>
             <groupId>com.apple</groupId>
@@ -23,22 +30,27 @@
         <dependency>
             <groupId>org.bitbucket.mstrobel</groupId>
             <artifactId>procyon-core</artifactId>
-            <version>0.5.36</version>
+            <version>${procyon.version}</version>
         </dependency>
         <dependency>
             <groupId>org.bitbucket.mstrobel</groupId>
             <artifactId>procyon-expressions</artifactId>
-            <version>0.5.36</version>
+            <version>${procyon.version}</version>
         </dependency>
         <dependency>
             <groupId>org.bitbucket.mstrobel</groupId>
             <artifactId>procyon-reflection</artifactId>
-            <version>0.5.36</version>
+            <version>${procyon.version}</version>
         </dependency>
         <dependency>
             <groupId>org.bitbucket.mstrobel</groupId>
             <artifactId>procyon-compilertools</artifactId>
-            <version>0.5.36</version>
+            <version>${procyon.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.leibnitz27</groupId>
+            <artifactId>cfr</artifactId>
+            <version>0.152</version>
         </dependency>
         <!--
         <dependency>
@@ -56,6 +68,11 @@
             <id>central</id>
             <name>Central Repository</name>
             <url>https://repo.maven.apache.org/maven2</url>
+        </repository>
+        <repository>
+            <id>jitpack</id>
+            <name>Jitpack Repository</name>
+            <url>https://jitpack.io</url>
         </repository>
     </repositories>
     <build>
