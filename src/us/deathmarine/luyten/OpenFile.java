@@ -14,6 +14,7 @@ import org.fife.ui.rsyntaxtextarea.Theme;
 import org.fife.ui.rtextarea.RTextScrollPane;
 import us.deathmarine.luyten.config.ConfigSaver;
 import us.deathmarine.luyten.config.LuytenPreferences;
+import us.deathmarine.luyten.decompiler.Decompiler;
 import us.deathmarine.luyten.decompiler.LinkProvider;
 import us.deathmarine.luyten.decompiler.ProcyonLinkProvider;
 import us.deathmarine.luyten.decompiler.Selection;
@@ -438,7 +439,8 @@ public class OpenFile implements SyntaxConstants {
         // synchronized: do not accept changes from menu while running
         //noinspection SynchronizeOnNonFinalField
         synchronized (settings) {
-            if (Languages.java().getName().equals(settings.getLanguage().getName())) {
+            if (Languages.java().getName().equals(settings.getLanguage().getName())
+                || luytenPrefs.getDecompiler() == Decompiler.CFR) {
                 decompileWithNavigationLinks();
             } else {
                 decompileWithoutLinks();
