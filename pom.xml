@@ -6,7 +6,7 @@
     <version>0.8.0</version>
 
     <properties>
-        <darklaf.version>3.0.0</darklaf.version>
+        <darklaf.version>2.7.3</darklaf.version>
         <rsyntaxtextarea.version>3.2.0</rsyntaxtextarea.version>
         <procyon.version>0.6.0</procyon.version>
     </properties>
