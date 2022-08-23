@@ -9,6 +9,8 @@
         <darklaf.version>2.7.3</darklaf.version>
         <rsyntaxtextarea.version>3.2.0</rsyntaxtextarea.version>
         <procyon.version>0.6.0</procyon.version>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
     </properties>
 
     <dependencies>
@@ -114,14 +116,6 @@
 				</executions>
 			</plugin>-->
             <plugin>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.8.1</version>
-                <configuration>
-                    <source>1.8</source>
-                    <target>1.8</target>
-                </configuration>
-            </plugin>
-            <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>
                 <version>2.4.2</version>
@@ -136,7 +130,7 @@
                             <transformers>
                                 <transformer
                                         implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                                    <mainClass>${project.groupId}.${project.artifactId}.Luyten</mainClass>
+                                    <mainClass>us.deathmarine.luyten.Luyten</mainClass>
                                 </transformer>
                             </transformers>
                             <filters>
@@ -193,12 +187,12 @@
                             <jar>target/${project.artifactId}-${project.version}.jar</jar>
                             <errTitle>App Err</errTitle>
                             <classPath>
-                                <mainClass>${project.groupId}.${project.artifactId}.Luyten</mainClass>
+                                <mainClass>us.deathmarine.luyten.Luyten</mainClass>
                             </classPath>
                             <icon>luytenx.ico</icon>
                             <jre>
-                                <minVersion>1.11.0</minVersion>
-                                <maxVersion>1.16.0</maxVersion>
+                                <minVersion>1.17.0</minVersion>
+                                <maxVersion>1.19.0</maxVersion>
                                 <initialHeapSize>128</initialHeapSize>
                                 <maxHeapSize>1024</maxHeapSize>
                             </jre>
@@ -261,10 +255,10 @@
                                             stubfile="${project.build.directory}/resources/universalJavaApplicationStub.sh"
                                             useJavaXKey="true" workingdirectory="$JAVAROOT"
                                             bundleid="${project.groupId}.${project.artifactId}"
-                                            mainclass="${project.groupId}.${project.artifactId}.LuytenOsx"
+                                            mainclass="us.deathmarine.luyten.LuytenOsx"
                                             version="${project.version}" copyright="2015"
                                             icon="${project.build.sourceDirectory}/resources/luyten.icns"
-                                            jvmversion="1.11+" screenmenu="true"
+                                            jvmversion="1.17+" screenmenu="true"
                                             antialiasedgraphics="true" highresolutioncapable="true">
                                     <documenttype name="Class File" extensions="class" role="Viewer"/>
                                     <documenttype name="Java File" extensions="java" role="Viewer"/>
