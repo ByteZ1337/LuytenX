@@ -113,7 +113,7 @@ public class Luyten {
     }
     
     public static String getVersion() {
-        return "0.8";
+        return "0.8.1";
     }
     
     /**
@@ -175,8 +175,8 @@ public class Luyten {
         scroll.setBorder(new CompoundBorder(BorderFactory.createTitledBorder("Stacktrace"),
             new BevelBorder(BevelBorder.LOWERED)));
         pane.add(scroll);
-        final String issue = "https://github.com/deathmarine/Luyten/issues";
-        final JLabel link = new JLabel("<HTML>Submit to <FONT color=\"#000099\"><U>" + issue + "</U></FONT></HTML>");
+        final String issue = "https://github.com/ByteZ1337/LuytenX/issues";
+        final JLabel link = new JLabel("<HTML>Submit to <FONT color=\"#3498db\"><U>" + issue + "</U></FONT></HTML>");
         link.setCursor(new Cursor(Cursor.HAND_CURSOR));
         link.addMouseListener(new MouseAdapter() {
             @Override
@@ -190,12 +190,12 @@ public class Luyten {
             
             @Override
             public void mouseEntered(MouseEvent e) {
-                link.setText("<HTML>Submit to <FONT color=\"#00aa99\"><U>" + issue + "</U></FONT></HTML>");
+                link.setText("<HTML>Submit to <FONT color=\"#3498db\"><U>" + issue + "</U></FONT></HTML>");
             }
             
             @Override
             public void mouseExited(MouseEvent e) {
-                link.setText("<HTML>Submit to <FONT color=\"#000099\"><U>" + issue + "</U></FONT></HTML>");
+                link.setText("<HTML>Submit to <FONT color=\"#3498db\"><U>" + issue + "</U></FONT></HTML>");
             }
         });
         pane.add(link);
