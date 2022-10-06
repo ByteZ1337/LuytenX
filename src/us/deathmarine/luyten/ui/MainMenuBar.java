@@ -511,7 +511,7 @@ public class MainMenuBar extends JMenuBar {
             link.setCursor(new Cursor(Cursor.HAND_CURSOR));
             link.addMouseListener(new LinkListener(rsyntax, link));
             pane.add(link);
-            pane.add(new JLabel("Version: 3.2.0"));
+            pane.add(new JLabel("Version: 3.3.0"));
             pane.add(new JLabel("(c) 2021 Robert Futrell"));
             
             String darkLaf = "https://github.com/weisJ/darklaf/";
@@ -519,7 +519,7 @@ public class MainMenuBar extends JMenuBar {
             link.setCursor(new Cursor(Cursor.HAND_CURSOR));
             link.addMouseListener(new LinkListener(darkLaf, link));
             pane.add(link);
-            pane.add(new JLabel("Version: 2.7.3"));
+            pane.add(new JLabel("Version: 3.0.2"));
             pane.add(new JLabel("(c) 2019-2022 Jannis Weis"));
             pane.add(new JLabel(" "));
             JOptionPane.showMessageDialog(null, pane);

@@ -6,8 +6,8 @@
     <version>0.8.1</version>
 
     <properties>
-        <darklaf.version>2.7.3</darklaf.version>
-        <rsyntaxtextarea.version>3.2.0</rsyntaxtextarea.version>
+        <darklaf.version>3.0.2</darklaf.version>
+        <rsyntaxtextarea.version>3.3.0</rsyntaxtextarea.version>
         <procyon.version>0.6.0</procyon.version>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
