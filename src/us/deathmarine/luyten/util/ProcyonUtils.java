@@ -3,9 +3,13 @@ package us.deathmarine.luyten.util;
 import com.strobel.assembler.metadata.TypeDefinition;
 import us.deathmarine.luyten.Model;
 
+import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.jar.JarEntry;
 import java.util.jar.JarFile;
+import java.util.jar.JarOutputStream;
 
 public class ProcyonUtils {
     
@@ -34,6 +38,23 @@ public class ProcyonUtils {
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
+        }
+    }
+    
+    public static File createSingletonTempJar(String entryName, byte[] content) {
+        try {
+            var file = File.createTempFile("luyten", ".jar");
+            file.deleteOnExit();
+            try (var jos = new JarOutputStream(new FileOutputStream(file))) {
+                var je = new JarEntry(entryName);
+                je.setSize(content.length);
+                jos.putNextEntry(je);
+                jos.write(content);
+                jos.closeEntry();
+            }
+            return file;
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
     }
     

@@ -440,7 +440,7 @@ public class OpenFile implements SyntaxConstants {
         //noinspection SynchronizeOnNonFinalField
         synchronized (settings) {
             if (Languages.java().getName().equals(settings.getLanguage().getName())
-                || luytenPrefs.getDecompiler() == Decompiler.CFR) {
+                || luytenPrefs.getDecompiler() != Decompiler.PROCYON) {
                 decompileWithNavigationLinks();
             } else {
                 decompileWithoutLinks();

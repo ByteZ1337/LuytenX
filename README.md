@@ -52,3 +52,9 @@ Licensed under Apache Version 2.0
 &copy; 2019-2022 Jannis Weis  
 [https://github.com/weisJ/darklaf/](https://github.com/weisJ/darklaf/)  
 [MIT License](https://github.com/weisJ/darklaf/blob/master/LICENSE)
+
+### Quiltflower
+
+&copy; 2022 Quiltflower Contributors
+[https://github.com/QuiltMC/quiltflower](https://github.com/QuiltMC/quiltflower)
+[Apache License](https://github.com/QuiltMC/quiltflower/blob/master/LICENSE.md)

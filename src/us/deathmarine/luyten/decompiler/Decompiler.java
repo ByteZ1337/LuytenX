@@ -5,7 +5,8 @@ import java.util.function.Supplier;
 
 public enum Decompiler {
     PROCYON(ProcyonLinkProvider::new),
-    CFR(CFRLinkProvider::new);
+    CFR(CFRLinkProvider::new),
+    Quiltflower(QuiltflowerLinkProvider::new);
     
     public static final Decompiler[] VALUES = values();
     

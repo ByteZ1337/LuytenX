@@ -54,6 +54,12 @@
             <artifactId>cfr</artifactId>
             <version>0.152</version>
         </dependency>
+        <dependency>
+            <groupId>org.quiltmc</groupId>
+            <artifactId>quiltflower</artifactId>
+            <version>1.8.1</version>
+        </dependency>
+
         <!--
         <dependency>
             <groupId>org.bitbucket.mstrobel</groupId>
@@ -75,6 +81,11 @@
             <id>jitpack</id>
             <name>Jitpack Repository</name>
             <url>https://jitpack.io</url>
+        </repository>
+        <repository>
+            <id>quiltmc</id>
+            <name>QuiltMC Repository</name>
+            <url>https://maven.quiltmc.org/repository/release/</url>
         </repository>
     </repositories>
     <build>

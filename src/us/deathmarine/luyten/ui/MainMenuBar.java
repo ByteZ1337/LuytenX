@@ -327,9 +327,14 @@ public class MainMenuBar extends JMenuBar {
         a.setSelected(Decompiler.PROCYON.equals(luytenPrefs.getDecompiler()));
         decompilersGroup.add(a);
         decompilersMenu.add(a);
-        
+    
         a = new JRadioButtonMenuItem(new DecompilerAction("CFR", Decompiler.CFR));
         a.setSelected(Decompiler.CFR.equals(luytenPrefs.getDecompiler()));
+        decompilersGroup.add(a);
+        decompilersMenu.add(a);
+    
+        a = new JRadioButtonMenuItem(new DecompilerAction("Quiltflower", Decompiler.Quiltflower));
+        a.setSelected(Decompiler.Quiltflower.equals(luytenPrefs.getDecompiler()));
         decompilersGroup.add(a);
         decompilersMenu.add(a);
     }
@@ -497,7 +502,7 @@ public class MainMenuBar extends JMenuBar {
             pane.add(link);
             pane.add(new JLabel("Version: " + Procyon.version()));
             pane.add(new JLabel("(c) 2018 Mike Strobel"));
-            
+    
             String cfr = "https://github.com/leibnitz27/cfr";
             link = new JLabel("<html><font color=\"#03bafc\"><u>" + cfr + "</u></font></html>");
             link.setCursor(new Cursor(Cursor.HAND_CURSOR));
@@ -505,6 +510,14 @@ public class MainMenuBar extends JMenuBar {
             pane.add(link);
             pane.add(new JLabel("Version: " + CfrVersionInfo.VERSION_INFO));
             pane.add(new JLabel("(c) 2011-2019 Lee Benfield"));
+    
+            String quiltflower = "https://github.com/QuiltMC/quiltflower";
+            link = new JLabel("<html><font color=\"#03bafc\"><u>" + quiltflower + "</u></font></html>");
+            link.setCursor(new Cursor(Cursor.HAND_CURSOR));
+            link.addMouseListener(new LinkListener(quiltflower, link));
+            pane.add(link);
+            pane.add(new JLabel("Version: 1.8.1"));
+            pane.add(new JLabel("(c) 2022 Quiltflower Contributors"));
             
             String rsyntax = "https://github.com/bobbylight/RSyntaxTextArea";
             link = new JLabel("<html><font color=\"#03bafc\"><u>" + rsyntax + "</u></font></html>");
