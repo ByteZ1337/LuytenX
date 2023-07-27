@@ -53,8 +53,15 @@ Licensed under Apache Version 2.0
 [https://github.com/weisJ/darklaf/](https://github.com/weisJ/darklaf/)  
 [MIT License](https://github.com/weisJ/darklaf/blob/master/LICENSE)
 
-### Quiltflower
+### Vineflower
 
-&copy; 2022 Quiltflower Contributors
-[https://github.com/QuiltMC/quiltflower](https://github.com/QuiltMC/quiltflower)
-[Apache License](https://github.com/QuiltMC/quiltflower/blob/master/LICENSE.md)
+&copy; 2022 Vineflower Contributors    
+[https://github.com/Vineflower/vineflower](https://github.com/Vineflower/vineflower)    
+[Apache License](https://github.com/Vineflower/vineflower/blob/master/LICENSE.md)
+
+### Kotlinp
+
+(Edited for portability)  
+&copy; 2010-2023 JetBrains s.r.o. and Kotlin Programming Language contributors  
+[https://github.com/JetBrains/kotlin/tree/master/libraries/tools/kotlinp](https://github.com/JetBrains/kotlin/tree/master/libraries/tools/kotlinp)  
+[Apache License](https://github.com/JetBrains/kotlin/blob/master/license/LICENSE.txt)

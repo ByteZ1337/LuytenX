@@ -55,9 +55,14 @@
             <version>0.152</version>
         </dependency>
         <dependency>
-            <groupId>org.quiltmc</groupId>
-            <artifactId>quiltflower</artifactId>
-            <version>1.8.1</version>
+            <groupId>org.vineflower</groupId>
+            <artifactId>vineflower</artifactId>
+            <version>1.9.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jetbrains.kotlin</groupId>
+            <artifactId>kotlinp</artifactId>
+            <version>1.0-SNAPSHOT</version>
         </dependency>
 
         <!--
@@ -83,9 +88,9 @@
             <url>https://jitpack.io</url>
         </repository>
         <repository>
-            <id>quiltmc</id>
-            <name>QuiltMC Repository</name>
-            <url>https://maven.quiltmc.org/repository/release/</url>
+            <id>xenondevs-third-party</id>
+            <name>XenonDevs Third Party Releases</name>
+            <url>https://repo.xenondevs.xyz/third-party-releases/</url>
         </repository>
     </repositories>
     <build>

@@ -16,7 +16,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.jar.Manifest;
 
-public class QuiltflowerLinkProvider implements LinkProvider, IBytecodeProvider, IResultSaver {
+public class VineflowerLinkProvider implements LinkProvider, IBytecodeProvider, IResultSaver {
     
     private TypeDefinition type;
     

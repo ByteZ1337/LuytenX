@@ -337,7 +337,12 @@ public class MainWindow extends JFrame {
                 sb.append(line).append("\n");
             sb.append("\n\n\n\n\n");
             reader = new BufferedReader(
-                new InputStreamReader(getClass().getResourceAsStream("/distfiles/Quiltflower.License.txt")));
+                new InputStreamReader(getClass().getResourceAsStream("/distfiles/Vineflower.License.txt")));
+            while ((line = reader.readLine()) != null)
+                sb.append(line).append("\n");
+            sb.append("\n\n\n\n\n");
+            reader = new BufferedReader(
+                new InputStreamReader(getClass().getResourceAsStream("/distfiles/Kotlinp.License.txt")));
             while ((line = reader.readLine()) != null)
                 sb.append(line).append("\n");
             sb.append("\n\n\n\n\n");
